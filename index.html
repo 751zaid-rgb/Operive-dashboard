@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operive Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Operive Executive Console</p>
+        <h1>Company Dashboard</h1>
+        <p class="subtitle">Interactive view of hierarchy, agent actions, reporting lines, and active missions.</p>
+      </div>
+      <div class="topbar-meta">
+        <div class="meta-card">
+          <span>CEO</span>
+          <strong>You</strong>
+        </div>
+        <div class="meta-card">
+          <span>Executive</span>
+          <strong>Noah</strong>
+        </div>
+        <div class="meta-card">
+          <span>Updated</span>
+          <strong id="last-updated"></strong>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel hero-panel">
+        <div class="stats-grid" id="stats-grid"></div>
+      </section>
+
+      <section class="panel hierarchy-panel">
+        <div class="panel-header">
+          <h2>Hierarchy</h2>
+          <p>Who reports to whom</p>
+        </div>
+        <div id="hierarchy-tree" class="hierarchy-tree"></div>
+      </section>
+
+      <section class="panel filters-panel">
+        <div class="panel-header">
+          <h2>Agent Actions</h2>
+          <p>Track current responsibilities, heartbeat cadence, and recent actions</p>
+        </div>
+        <div class="filters">
+          <input id="agent-search" type="search" placeholder="Search agent name or role" />
+          <select id="status-filter">
+            <option value="all">All statuses</option>
+            <option value="idle">Idle</option>
+            <option value="active">Active</option>
+            <option value="blocked">Blocked</option>
+            <option value="review">Review</option>
+            <option value="complete">Complete</option>
+          </select>
+        </div>
+        <div id="agent-grid" class="agent-grid"></div>
+      </section>
+
+      <section class="panel mission-panel">
+        <div class="panel-header">
+          <h2>Active Mission Panel</h2>
+          <p>Current mission state and next executive action</p>
+        </div>
+        <div id="mission-list" class="mission-list"></div>
+      </section>
+
+      <section class="panel feed-panel">
+        <div class="panel-header">
+          <h2>Live Action Feed</h2>
+          <p>Current known agent actions from the latest workspace state</p>
+        </div>
+        <div id="activity-feed" class="activity-feed"></div>
+      </section>
+
+      <section class="panel reporting-panel">
+        <div class="panel-header">
+          <h2>Reporting Lines</h2>
+          <p>Executive accountability map</p>
+        </div>
+        <ul id="reporting-lines" class="reporting-lines"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
