@@ -7,7 +7,7 @@ const dashboard = {
   stats: [
     { label: 'Active Missions', value: 1, note: '1 mission currently tracked' },
     { label: 'Agents in System', value: 7, note: 'Operating under Master-Orchestrator' },
-    { label: 'Blocked Items', value: 1, note: 'Live calendar booking access' },
+    { label: 'Blocked Items', value: 0, note: 'Core integrations are connected' },
     { label: 'Leads Ready', value: 5, note: 'Prepared for review and outbound decisions' },
   ],
   hierarchy: {
@@ -97,14 +97,14 @@ const dashboard = {
     {
       name: 'Scheduler',
       role: 'Executive Scheduling Agent',
-      status: 'blocked',
+      status: 'idle',
       reportsTo: 'Master-Orchestrator',
       responsibility: 'Book hot leads and executive review sessions in approved time windows.',
       heartbeat: 'Weekdays at 4:00 PM America/Chicago',
       actions: [
         'Prepared 3 review slot options for tomorrow morning',
         'Recommended 10:00 AM to 10:30 AM',
-        'Blocked on live Google Calendar access in current session',
+        'Google Calendar and Gmail are connected, live booking is now available',
       ],
     },
     {
@@ -140,7 +140,7 @@ const dashboard = {
         '5 company-level leads collected with public contact emails.',
         '5 tailored intros drafted and saved in leads.csv.',
         'Scheduler prepared tomorrow morning options.',
-        'Live Google Calendar booking is still blocked in this session.',
+        'Google Calendar and Gmail are now connected, so live booking is available.',
       ],
     },
   ],
@@ -154,8 +154,8 @@ const dashboard = {
     {
       time: 'Most recent',
       agent: 'Scheduler',
-      status: 'blocked',
-      text: 'Prepared tomorrow-morning review options but could not place a live calendar hold in the current session.',
+      status: 'idle',
+      text: 'Google Calendar and Gmail are connected, and live booking is now available for review slots and hot leads.',
     },
     {
       time: 'Most recent',
