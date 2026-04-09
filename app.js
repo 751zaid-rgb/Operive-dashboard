@@ -5,10 +5,46 @@ const dashboard = {
     executive: 'Noah',
   },
   stats: [
-    { label: 'Active Missions', value: 2, note: 'Mission review plus active operating pipeline' },
-    { label: 'Agents in System', value: 7, note: 'Operating under Master-Orchestrator' },
-    { label: 'Blocked Items', value: 0, note: 'Core integrations are connected' },
-    { label: 'Leads Ready', value: 5, note: 'Prepared for review and outbound decisions' },
+    { label: 'Primary market', value: 'Home services', note: 'Built for practical small-business operations' },
+    { label: 'Core offer', value: 'Speed-to-lead', note: 'Missed-call recovery, booking, and follow-up' },
+    { label: 'Delivery model', value: 'Sprint based', note: 'Audit, implementation, training, optimization' },
+    { label: 'Contact', value: 'hello@operive.com', note: 'Direct business contact for new work' },
+  ],
+  trustSignals: [
+    {
+      title: 'Implementation-first',
+      text: 'Operive focuses on fixing one real workflow at a time instead of selling vague AI strategy decks.',
+    },
+    {
+      title: 'Human-reviewed operations',
+      text: 'AI supports routing, drafting, summaries, and follow-up, while humans keep oversight where mistakes matter.',
+    },
+    {
+      title: 'Works with existing tools',
+      text: 'The goal is to improve the stack you already use, not force a full rip-and-replace.',
+    },
+    {
+      title: 'Clear business contact',
+      text: 'Reach Operive directly at hello@operive.com for audits, implementation sprints, and workflow reviews.',
+    },
+  ],
+  proofPoints: [
+    {
+      title: 'Start with one bottleneck',
+      text: 'Operive begins with the workflow leaking time or revenue right now, usually lead response, missed calls, intake, or scheduling.',
+    },
+    {
+      title: 'Install with bounded scope',
+      text: 'Delivery is structured as a focused sprint with concrete handoffs, clear ownership, and a visible before-and-after result.',
+    },
+    {
+      title: 'Train the team during rollout',
+      text: 'The workflow is only useful if the team actually adopts it, so training and review are built into implementation.',
+    },
+    {
+      title: 'Improve what works',
+      text: 'After launch, Operive tightens prompts, routing, and operating rules based on real usage instead of hype.',
+    },
   ],
   hierarchy: {
     name: 'CEO',
@@ -265,6 +301,33 @@ function renderHierarchy() {
   byId('hierarchy-tree').innerHTML = renderNode(dashboard.hierarchy);
 }
 
+function renderTrustSignals() {
+  byId('trust-grid').innerHTML = dashboard.trustSignals
+    .map(
+      (item) => `
+        <article class="trust-card">
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `,
+    )
+    .join('');
+}
+
+function renderProofPoints() {
+  byId('proof-grid').innerHTML = dashboard.proofPoints
+    .map(
+      (item, index) => `
+        <article class="trust-card proof-card">
+          <div class="pill">0${index + 1}</div>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `,
+    )
+    .join('');
+}
+
 function badge(status) {
   return `<span class="badge ${status}">${status}</span>`;
 }
@@ -367,10 +430,12 @@ function init() {
   byId('last-updated').textContent = dashboard.updatedAt;
   renderStats();
   renderHierarchy();
+  renderTrustSignals();
   renderAgents();
   renderMissions();
   renderFeed();
   renderReportingLines();
+  renderProofPoints();
 
   byId('agent-search').addEventListener('input', renderAgents);
   byId('status-filter').addEventListener('change', renderAgents);

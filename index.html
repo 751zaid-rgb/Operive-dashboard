@@ -3,24 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Operive Dashboard</title>
+    <title>Operive | Practical AI workflows for small businesses</title>
+    <meta
+      name="description"
+      content="Operive helps U.S. small businesses install practical AI workflows for lead response, missed-call recovery, booking automation, and admin triage."
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="topbar">
       <div>
-        <p class="eyebrow">Operive Executive Console</p>
-        <h1>Company Dashboard</h1>
-        <p class="subtitle">Interactive view of hierarchy, agent actions, reporting lines, and active missions.</p>
+        <p class="eyebrow">Operive</p>
+        <h1>Practical AI workflows for small businesses</h1>
+        <p class="subtitle">Implementation-first AI for lead response, missed-call recovery, booking automation, and admin triage, installed for you.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="mailto:hello@operive.com">Email hello@operive.com</a>
+          <a class="button button-secondary" href="#contact">Work with Operive</a>
+        </div>
       </div>
       <div class="topbar-meta">
         <div class="meta-card">
-          <span>CEO</span>
-          <strong>You</strong>
+          <span>Focus</span>
+          <strong>Home services</strong>
         </div>
         <div class="meta-card">
-          <span>Executive</span>
-          <strong>Noah</strong>
+          <span>Contact</span>
+          <strong>hello@operive.com</strong>
         </div>
         <div class="meta-card">
           <span>Updated</span>
@@ -30,6 +38,13 @@
     </header>
 
     <main class="layout">
+      <section class="panel trust-panel">
+        <div class="panel-header">
+          <h2>Why small businesses trust Operive</h2>
+          <p>Practical delivery, human review, and clear operating guardrails.</p>
+        </div>
+        <div id="trust-grid" class="trust-grid"></div>
+      </section>
       <section class="panel hero-panel">
         <div class="stats-grid" id="stats-grid"></div>
       </section>
@@ -84,7 +99,33 @@
         </div>
         <ul id="reporting-lines" class="reporting-lines"></ul>
       </section>
+
+      <section class="panel proof-panel">
+        <div class="panel-header">
+          <h2>How Operive works</h2>
+          <p>Clean implementation beats vague AI promises.</p>
+        </div>
+        <div id="proof-grid" class="proof-grid"></div>
+      </section>
+
+      <section id="contact" class="panel contact-panel">
+        <div class="panel-header">
+          <h2>Contact Operive</h2>
+          <p>Want to fix one workflow first? Start there.</p>
+        </div>
+        <div class="contact-card">
+          <p><strong>Email:</strong> <a href="mailto:hello@operive.com">hello@operive.com</a></p>
+          <p><strong>Website:</strong> <a href="https://www.operive.com/">www.operive.com</a></p>
+          <p><strong>Best fit:</strong> U.S. small businesses, especially home-service teams that need faster follow-up and cleaner operations.</p>
+          <p><strong>Engagement style:</strong> audit, implementation sprint, team training, and ongoing optimization.</p>
+        </div>
+      </section>
     </main>
+
+    <footer class="footer">
+      <p>Operive, practical AI workflows for small businesses.</p>
+      <p><a href="mailto:hello@operive.com">hello@operive.com</a></p>
+    </footer>
 
     <script src="app.js"></script>
   </body>
