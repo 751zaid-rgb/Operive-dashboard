@@ -28,6 +28,20 @@ const dashboard = {
       text: 'Reach Operive directly at hello@operive.com for audits, implementation sprints, and workflow reviews.',
     },
   ],
+  aboutItems: [
+    {
+      title: 'Built for operators, not AI hobbyists',
+      text: 'Operive is for owners and teams who need workflows cleaned up, not a pile of disconnected AI demos.',
+    },
+    {
+      title: 'Best fit: service businesses',
+      text: 'Home-service and similar small-business teams are a strong fit because speed-to-lead, intake, and scheduling matter a lot.',
+    },
+    {
+      title: 'Practical rollout',
+      text: 'We scope one useful workflow, install it, train the team, and improve it from actual usage.',
+    },
+  ],
   proofPoints: [
     {
       title: 'Start with one bottleneck',
@@ -44,6 +58,20 @@ const dashboard = {
     {
       title: 'Improve what works',
       text: 'After launch, Operive tightens prompts, routing, and operating rules based on real usage instead of hype.',
+    },
+  ],
+  caseStudies: [
+    {
+      title: 'Speed-to-lead follow-up',
+      text: 'New inquiries get captured, routed, and answered faster so prospects do not go cold while the team is busy.',
+    },
+    {
+      title: 'Missed-call recovery',
+      text: 'Missed calls become documented follow-up tasks and response drafts instead of lost revenue and guesswork.',
+    },
+    {
+      title: 'Booking handoff cleanup',
+      text: 'Qualification and scheduling get cleaner handoffs so fewer leads stall between office staff, field staff, and calendars.',
     },
   ],
   hierarchy: {
@@ -314,12 +342,38 @@ function renderTrustSignals() {
     .join('');
 }
 
+function renderAbout() {
+  byId('about-grid').innerHTML = dashboard.aboutItems
+    .map(
+      (item) => `
+        <article class="trust-card">
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `,
+    )
+    .join('');
+}
+
 function renderProofPoints() {
   byId('proof-grid').innerHTML = dashboard.proofPoints
     .map(
       (item, index) => `
         <article class="trust-card proof-card">
           <div class="pill">0${index + 1}</div>
+          <h3>${item.title}</h3>
+          <p>${item.text}</p>
+        </article>
+      `,
+    )
+    .join('');
+}
+
+function renderCaseStudies() {
+  byId('case-grid').innerHTML = dashboard.caseStudies
+    .map(
+      (item) => `
+        <article class="trust-card">
           <h3>${item.title}</h3>
           <p>${item.text}</p>
         </article>
@@ -431,11 +485,13 @@ function init() {
   renderStats();
   renderHierarchy();
   renderTrustSignals();
+  renderAbout();
   renderAgents();
   renderMissions();
   renderFeed();
   renderReportingLines();
   renderProofPoints();
+  renderCaseStudies();
 
   byId('agent-search').addEventListener('input', renderAgents);
   byId('status-filter').addEventListener('change', renderAgents);

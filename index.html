@@ -17,8 +17,9 @@
         <h1>Practical AI workflows for small businesses</h1>
         <p class="subtitle">Implementation-first AI for lead response, missed-call recovery, booking automation, and admin triage, installed for you.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="mailto:hello@operive.com">Email hello@operive.com</a>
+          <a class="button button-primary" href="mailto:hello@operive.com?subject=Operive%20workflow%20audit">Email hello@operive.com</a>
           <a class="button button-secondary" href="#contact">Work with Operive</a>
+          <a class="button button-secondary" href="#about">About Operive</a>
         </div>
       </div>
       <div class="topbar-meta">
@@ -45,6 +46,15 @@
         </div>
         <div id="trust-grid" class="trust-grid"></div>
       </section>
+
+      <section id="about" class="panel about-panel">
+        <div class="panel-header">
+          <h2>About Operive</h2>
+          <p>We help small businesses install useful AI without turning operations into a science project.</p>
+        </div>
+        <div id="about-grid" class="about-grid"></div>
+      </section>
+
       <section class="panel hero-panel">
         <div class="stats-grid" id="stats-grid"></div>
       </section>
@@ -108,16 +118,68 @@
         <div id="proof-grid" class="proof-grid"></div>
       </section>
 
+      <section class="panel case-panel">
+        <div class="panel-header">
+          <h2>Example workflow outcomes</h2>
+          <p>The point is cleaner follow-up, faster response, and fewer dropped leads.</p>
+        </div>
+        <div id="case-grid" class="proof-grid"></div>
+      </section>
+
       <section id="contact" class="panel contact-panel">
         <div class="panel-header">
           <h2>Contact Operive</h2>
           <p>Want to fix one workflow first? Start there.</p>
         </div>
+        <div class="contact-layout">
+          <div class="contact-card">
+            <p><strong>Email:</strong> <a href="mailto:hello@operive.com">hello@operive.com</a></p>
+            <p><strong>Website:</strong> <a href="https://www.operive.com/">www.operive.com</a></p>
+            <p><strong>Best fit:</strong> U.S. small businesses, especially home-service teams that need faster follow-up and cleaner operations.</p>
+            <p><strong>Engagement style:</strong> audit, implementation sprint, team training, and ongoing optimization.</p>
+          </div>
+          <form class="contact-form" action="mailto:hello@operive.com" method="post" enctype="text/plain">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
+            <label>
+              Business
+              <input type="text" name="business" placeholder="Company name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@company.com" />
+            </label>
+            <label>
+              Workflow to fix first
+              <select name="workflow">
+                <option>Lead response</option>
+                <option>Missed-call recovery</option>
+                <option>Booking automation</option>
+                <option>Inbox/admin triage</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <label>
+              What is breaking now?
+              <textarea name="details" rows="5" placeholder="Tell Operive what is slow, messy, or leaking leads."></textarea>
+            </label>
+            <button class="button button-primary" type="submit">Start the conversation</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="panel privacy-panel">
+        <div class="panel-header">
+          <h2>Privacy and responsible use</h2>
+          <p>Simple, plain-English guardrails.</p>
+        </div>
         <div class="contact-card">
-          <p><strong>Email:</strong> <a href="mailto:hello@operive.com">hello@operive.com</a></p>
-          <p><strong>Website:</strong> <a href="https://www.operive.com/">www.operive.com</a></p>
-          <p><strong>Best fit:</strong> U.S. small businesses, especially home-service teams that need faster follow-up and cleaner operations.</p>
-          <p><strong>Engagement style:</strong> audit, implementation sprint, team training, and ongoing optimization.</p>
+          <p>Operive aims to use client information only for delivery, support, and agreed workflow improvement.</p>
+          <p>Client workflows should keep human review where legal, financial, or customer-impact mistakes matter.</p>
+          <p>We prefer bounded implementations, clear approval paths, and practical documentation over black-box automation.</p>
+          <p>Questions about privacy or data handling can be sent to <a href="mailto:hello@operive.com">hello@operive.com</a>.</p>
         </div>
       </section>
     </main>
@@ -125,6 +187,7 @@
     <footer class="footer">
       <p>Operive, practical AI workflows for small businesses.</p>
       <p><a href="mailto:hello@operive.com">hello@operive.com</a></p>
+      <p>Implementation-first. Human-reviewed. Built for real operations.</p>
     </footer>
 
     <script src="app.js"></script>

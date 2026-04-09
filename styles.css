@@ -109,10 +109,10 @@ a:hover { color: #ffffff; }
 }
 
 .panel { padding: 22px; }
-.hero-panel, .filters-panel, .mission-panel, .feed-panel, .trust-panel, .proof-panel, .contact-panel { grid-column: span 12; }
+.hero-panel, .filters-panel, .mission-panel, .feed-panel, .trust-panel, .about-panel, .proof-panel, .case-panel, .contact-panel, .privacy-panel { grid-column: span 12; }
 .hierarchy-panel, .reporting-panel { grid-column: span 6; }
 
-.trust-grid, .proof-grid {
+.trust-grid, .proof-grid, .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 14px;
@@ -125,11 +125,38 @@ a:hover { color: #ffffff; }
   padding: 18px;
 }
 
-.contact-card {
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) minmax(320px, 1.2fr);
+  gap: 16px;
+}
+
+.contact-card, .contact-form {
   background: var(--panel-2);
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 18px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+textarea {
+  background: #0e1527;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font: inherit;
+  resize: vertical;
 }
 
 .footer {
@@ -286,4 +313,5 @@ input { min-width: 260px; flex: 1; }
   .topbar { flex-direction: column; }
   .topbar-meta { min-width: 0; grid-template-columns: repeat(2, 1fr); }
   .hierarchy-panel, .reporting-panel { grid-column: span 12; }
+  .contact-layout { grid-template-columns: 1fr; }
 }
