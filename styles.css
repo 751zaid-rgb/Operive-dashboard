@@ -109,8 +109,7 @@ a:hover { color: #ffffff; }
 }
 
 .panel { padding: 22px; }
-.hero-panel, .filters-panel, .mission-panel, .feed-panel, .trust-panel, .about-panel, .proof-panel, .case-panel, .contact-panel, .privacy-panel { grid-column: span 12; }
-.hierarchy-panel, .reporting-panel { grid-column: span 6; }
+.hero-panel, .trust-panel, .about-panel, .proof-panel, .case-panel, .contact-panel, .privacy-panel { grid-column: span 12; }
 
 .trust-grid, .proof-grid, .about-grid {
   display: grid;
@@ -183,34 +182,6 @@ textarea {
   margin: 8px 0 4px;
 }
 
-.hierarchy-tree {
-  display: grid;
-  gap: 12px;
-}
-
-.tree-node {
-  background: var(--panel-2);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 14px 16px;
-}
-
-.tree-children {
-  margin-top: 12px;
-  margin-left: 18px;
-  padding-left: 14px;
-  border-left: 1px solid rgba(255,255,255,0.12);
-  display: grid;
-  gap: 10px;
-}
-
-.filters {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 18px;
-}
-
 input, select {
   background: #0e1527;
   color: var(--text);
@@ -221,65 +192,6 @@ input, select {
 }
 
 input { min-width: 260px; flex: 1; }
-
-.agent-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 14px;
-}
-
-.agent-card {
-  background: var(--panel-2);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
-  display: grid;
-  gap: 12px;
-}
-
-.agent-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: start;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.badge.idle { background: rgba(96,165,250,0.14); color: #93c5fd; }
-.badge.active { background: rgba(110,231,183,0.14); color: #86efac; }
-.badge.blocked { background: rgba(248,113,113,0.14); color: #fca5a5; }
-.badge.review { background: rgba(251,191,36,0.14); color: #fde68a; }
-.badge.complete { background: rgba(167,139,250,0.14); color: #c4b5fd; }
-
-.agent-list, .mission-list, .reporting-lines {
-  display: grid;
-  gap: 12px;
-}
-
-.agent-list ul, .mission-card ul { margin: 0; padding-left: 18px; }
-
-.mission-card, .feed-item {
-  background: var(--panel-2);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 16px;
-}
-
-.mission-meta, .agent-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
 
 .pill {
   border: 1px solid var(--border);
@@ -312,6 +224,5 @@ input { min-width: 260px; flex: 1; }
   .topbar, .layout { padding-left: 18px; padding-right: 18px; }
   .topbar { flex-direction: column; }
   .topbar-meta { min-width: 0; grid-template-columns: repeat(2, 1fr); }
-  .hierarchy-panel, .reporting-panel { grid-column: span 12; }
   .contact-layout { grid-template-columns: 1fr; }
 }
