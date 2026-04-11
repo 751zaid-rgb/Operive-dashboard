@@ -1,20 +1,20 @@
-# Operive Dashboard
+# Operive Website
 
-This repository contains an interactive company dashboard for Operive.
+Plain HTML/CSS marketing site for Operive.
 
 ## Files
-- `index.html` — main dashboard UI
-- `styles.css` — dashboard styling
-- `app.js` — dashboard data and rendering logic
-- `COMPANY_DASHBOARD.md` — source planning document for hierarchy, responsibilities, heartbeats, and missions
+- `index.html`
+- `services.html`
+- `how-it-works.html`
+- `use-cases.html`
+- `industries.html`
+- `trust-and-safety.html`
+- `about.html`
+- `contact.html`
+- `privacy.html`
+- `terms.html`
+- `styles.css`
+- `app.js`
 
-## What the dashboard shows
-- company hierarchy
-- reporting lines
-- agent responsibilities
-- heartbeat schedule
-- active mission panel
-- current known agent actions
-
-## How to view it locally
+## Local preview
 Open `index.html` in a browser.

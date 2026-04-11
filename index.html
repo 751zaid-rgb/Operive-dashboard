@@ -3,543 +3,329 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Operive | AI workflow implementation for small businesses</title>
+    <title>Operive | AI systems for small businesses that need real work done</title>
     <meta
       name="description"
-      content="Operive helps small businesses implement practical AI workflows for lead response, missed-call recovery, booking automation, intake, and admin triage."
+      content="Operive helps small businesses deploy practical AI workflows for lead capture, customer communication, scheduling, follow-up, and internal operations."
     />
-    <meta property="og:title" content="Operive | AI workflow implementation for small businesses" />
+    <link rel="canonical" href="https://www.operive.com/" />
+    <meta name="theme-color" content="#1f4fff" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Operive | AI systems for small businesses that need real work done" />
     <meta
       property="og:description"
-      content="Implementation-first AI for lead response, missed-call recovery, booking automation, intake, and admin triage."
+      content="Practical AI workflow implementation for small businesses, from lead intake to scheduling, follow-up, and operations."
     />
-    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.operive.com/" />
     <meta name="twitter:card" content="summary_large_image" />
-    <style>
-      :root {
-        --bg: #09101d;
-        --panel: #111a2c;
-        --panel-2: #16233b;
-        --text: #edf2ff;
-        --muted: #a8b4d1;
-        --line: rgba(255,255,255,0.08);
-        --accent: #67e8b5;
-        --accent-2: #60a5fa;
-        --accent-3: #c4b5fd;
-        --shadow: 0 22px 60px rgba(0,0,0,0.28);
-        --max: 1160px;
+    <meta name="twitter:title" content="Operive | AI systems for small businesses that need real work done" />
+    <meta
+      name="twitter:description"
+      content="Practical AI workflow implementation for small businesses, from lead intake to scheduling, follow-up, and operations."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231f4fff'/%3E%3Cpath d='M18 34c0-9.4 6.7-16 14-16s14 6.6 14 16-6.7 16-14 16-14-6.6-14-16Z' fill='white'/%3E%3Cpath d='M24 28h16M24 34h16M24 40h16' stroke='%231f4fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Operive",
+        "url": "https://www.operive.com/",
+        "email": "hello@operive.com",
+        "description": "Operive helps small businesses implement practical AI workflows for customer communication, scheduling, follow-up, and operations.",
+        "sameAs": []
       }
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        color: var(--text);
-        background:
-          radial-gradient(circle at top right, rgba(96,165,250,0.12), transparent 28%),
-          radial-gradient(circle at top left, rgba(103,232,181,0.10), transparent 24%),
-          linear-gradient(180deg, #09101d 0%, #0d1628 100%);
-      }
-      a { color: inherit; }
-      .wrap { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
-      .topbar {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        backdrop-filter: blur(14px);
-        background: rgba(9,16,29,0.74);
-        border-bottom: 1px solid var(--line);
-      }
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-        padding: 16px 0;
-      }
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-weight: 800;
-        letter-spacing: 0.02em;
-        text-decoration: none;
-      }
-      .brand-badge {
-        width: 36px;
-        height: 36px;
-        border-radius: 12px;
-        display: grid;
-        place-items: center;
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: #08101c;
-        font-weight: 900;
-      }
-      .nav-links {
-        display: flex;
-        gap: 18px;
-        align-items: center;
-        flex-wrap: wrap;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: var(--muted);
-        font-size: 14px;
-      }
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        border-radius: 14px;
-        padding: 12px 18px;
-        text-decoration: none;
-        font-weight: 700;
-        border: 1px solid var(--line);
-      }
-      .btn-primary {
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        color: #07111d;
-      }
-      .btn-secondary {
-        background: rgba(255,255,255,0.03);
-        color: var(--text);
-      }
-      .hero {
-        padding: 72px 0 42px;
-      }
-      .hero-grid {
-        display: grid;
-        grid-template-columns: 1.25fr 0.9fr;
-        gap: 28px;
-        align-items: stretch;
-      }
-      .eyebrow {
-        color: var(--accent);
-        text-transform: uppercase;
-        letter-spacing: 0.14em;
-        font-size: 12px;
-        margin: 0 0 14px;
-        font-weight: 700;
-      }
-      h1, h2, h3, p { margin-top: 0; }
-      h1 {
-        font-size: clamp(38px, 6vw, 64px);
-        line-height: 1.02;
-        margin-bottom: 18px;
-        max-width: 12ch;
-      }
-      .lead {
-        color: var(--muted);
-        font-size: 18px;
-        line-height: 1.65;
-        max-width: 64ch;
-        margin-bottom: 24px;
-      }
-      .hero-actions {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 22px;
-      }
-      .micro {
-        color: var(--muted);
-        font-size: 14px;
-      }
-      .panel {
-        background: rgba(17,26,44,0.86);
-        border: 1px solid var(--line);
-        border-radius: 24px;
-        box-shadow: var(--shadow);
-      }
-      .hero-card {
-        padding: 24px;
-        display: grid;
-        gap: 16px;
-      }
-      .stack {
-        display: grid;
-        gap: 14px;
-      }
-      .pill-row {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-      }
-      .pill {
-        padding: 8px 12px;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        color: var(--muted);
-        font-size: 13px;
-      }
-      .metric-grid,
-      .card-grid,
-      .faq-grid,
-      .proof-grid {
-        display: grid;
-        gap: 16px;
-      }
-      .metric-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .metric,
-      .card,
-      .faq,
-      .proof {
-        background: var(--panel-2);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 18px;
-      }
-      .metric strong {
-        display: block;
-        font-size: 28px;
-        margin-bottom: 6px;
-      }
-      .metric span,
-      .card p,
-      .faq p,
-      .proof p,
-      .section-copy,
-      .contact-copy,
-      .footer p,
-      .list,
-      .fine {
-        color: var(--muted);
-        line-height: 1.65;
-      }
-      section {
-        padding: 22px 0;
-      }
-      .section-head {
-        display: flex;
-        justify-content: space-between;
-        gap: 18px;
-        align-items: end;
-        margin-bottom: 18px;
-      }
-      .section-head h2 {
-        font-size: clamp(28px, 4vw, 40px);
-        margin-bottom: 8px;
-      }
-      .card-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-      .proof-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-      .contact-box {
-        display: grid;
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 18px;
-      }
-      .contact-panel,
-      .contact-form {
-        padding: 22px;
-      }
-      .contact-form {
-        display: grid;
-        gap: 12px;
-      }
-      label {
-        display: grid;
-        gap: 8px;
-        color: var(--muted);
-        font-size: 14px;
-      }
-      input,
-      textarea,
-      select {
-        width: 100%;
-        border-radius: 14px;
-        border: 1px solid var(--line);
-        background: #0d1628;
-        color: var(--text);
-        padding: 13px 14px;
-        font: inherit;
-      }
-      textarea { resize: vertical; min-height: 130px; }
-      .list {
-        margin: 0;
-        padding-left: 18px;
-      }
-      .list li + li { margin-top: 8px; }
-      .footer {
-        padding: 24px 0 42px;
-        border-top: 1px solid var(--line);
-        margin-top: 26px;
-      }
-      .footer-grid {
-        display: flex;
-        justify-content: space-between;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-      .footer-links {
-        display: flex;
-        gap: 16px;
-        flex-wrap: wrap;
-      }
-      .footer-links a { color: var(--muted); text-decoration: none; }
-      @media (max-width: 980px) {
-        .hero-grid,
-        .contact-box,
-        .card-grid,
-        .proof-grid { grid-template-columns: 1fr; }
-        .section-head,
-        .nav { flex-direction: column; align-items: start; }
-      }
-    </style>
+    </script>
   </head>
   <body>
-    <div class="topbar">
-      <div class="wrap nav">
-        <a class="brand" href="#top">
-          <span class="brand-badge">O</span>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="index.html" aria-label="Operive home">
+          <span class="brand-mark">O</span>
           <span>Operive</span>
         </a>
-        <div class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#process">Process</a>
-          <a href="#fit">Best fit</a>
-          <a href="#faq">FAQ</a>
-          <a class="btn btn-primary" href="#contact">Get started</a>
+        <nav aria-label="Primary navigation">
+          <ul class="nav-links">
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="trust-and-safety.html">Trust and Safety</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-cta">
+          <a class="button button-secondary" href="use-cases.html">See use cases</a>
+          <a class="button button-primary" href="contact.html">Book a demo</a>
         </div>
-      </div>
-    </div>
-
-    <header id="top" class="hero wrap">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow">Implementation-first AI for small businesses</p>
-          <h1>Fix one workflow that is costing you time, leads, or margin.</h1>
-          <p class="lead">
-            Operive helps small businesses install practical AI workflows for lead response, missed-call recovery,
-            booking automation, intake, and admin triage. No hype deck, no vague strategy theater, just scoped work
-            that improves the operation.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:hello@operive.com?subject=Operive%20workflow%20audit">Email hello@operive.com</a>
-            <a class="btn btn-secondary" href="#contact">Request a workflow audit</a>
-          </div>
-          <p class="micro">Best fit: home-service teams and other small businesses that need faster follow-up and cleaner handoffs.</p>
-        </div>
-        <aside class="panel hero-card">
-          <div class="pill-row">
-            <span class="pill">Lead response</span>
-            <span class="pill">Missed calls</span>
-            <span class="pill">Booking</span>
-            <span class="pill">Intake</span>
-            <span class="pill">Admin triage</span>
-          </div>
-          <div class="metric-grid">
-            <div class="metric">
-              <strong>1 workflow</strong>
-              <span>Start with one bottleneck instead of trying to automate everything.</span>
-            </div>
-            <div class="metric">
-              <strong>1 sprint</strong>
-              <span>Bounded implementation with clear scope, handoffs, and owner review.</span>
-            </div>
-            <div class="metric">
-              <strong>Human review</strong>
-              <span>Keep approval where legal, financial, or customer-impact mistakes matter.</span>
-            </div>
-            <div class="metric">
-              <strong>Clear contact</strong>
-              <span>Reach Operive directly at hello@operive.com.</span>
-            </div>
-          </div>
-        </aside>
       </div>
     </header>
 
-    <main class="wrap">
-      <section id="services">
-        <div class="section-head">
+    <main>
+      <section class="home-hero">
+        <div class="container hero-grid">
           <div>
-            <p class="eyebrow">Services</p>
-            <h2>What Operive helps fix</h2>
-            <p class="section-copy">The right first project is usually the one already leaking revenue or wasting staff time.</p>
+            <p class="eyebrow">Practical AI systems</p>
+            <h1>AI systems for small businesses that need real work done</h1>
+            <p class="lead">
+              Operive helps small businesses deploy practical AI workflows for lead capture, customer communication,
+              scheduling, follow-up, and internal operations.
+            </p>
+            <p class="hero-note">Built for practical business workflows - not AI hype.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="contact.html">Book a demo</a>
+              <a class="button button-secondary" href="use-cases.html">See use cases</a>
+            </div>
           </div>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Speed-to-lead follow-up</h3>
-            <p>Route inquiries faster, draft better first responses, and keep new leads from going cold while the team is busy.</p>
-          </article>
-          <article class="card">
-            <h3>Missed-call recovery</h3>
-            <p>Turn missed calls into documented follow-up tasks and booking-ready replies instead of silent lost revenue.</p>
-          </article>
-          <article class="card">
-            <h3>Booking automation</h3>
-            <p>Reduce manual back-and-forth between qualification, scheduling, and calendar ownership.</p>
-          </article>
-          <article class="card">
-            <h3>Inquiry and intake cleanup</h3>
-            <p>Capture better information up front so jobs, quotes, and follow-up do not rely on scattered notes.</p>
-          </article>
-          <article class="card">
-            <h3>Quote and estimate follow-through</h3>
-            <p>Keep quote-stage opportunities from drifting with reminder logic, next-step prompts, and cleaner ownership.</p>
-          </article>
-          <article class="card">
-            <h3>Inbox and admin triage</h3>
-            <p>Use AI for sorting, drafting, summarizing, and task creation while preserving human oversight.</p>
-          </article>
+          <aside class="hero-panel">
+            <div>
+              <p class="panel-label">Deployment themes</p>
+              <ul class="check-list">
+                <li>Repeatable workflows</li>
+                <li>Fast implementation</li>
+                <li>Human-reviewed deployment</li>
+                <li>Ongoing optimization</li>
+              </ul>
+            </div>
+            <div class="stat-row">
+              <div class="stat-card">
+                <strong>Implementation and deployment</strong>
+                <span>Configured around real processes, not demo scripts.</span>
+              </div>
+              <div class="stat-card">
+                <strong>Existing tool integrations</strong>
+                <span>Works with calendars, inboxes, CRMs, and operational tools already in use.</span>
+              </div>
+              <div class="stat-card">
+                <strong>Monitored workflows</strong>
+                <span>Boundaries, review points, and performance checks are built into rollout.</span>
+              </div>
+              <div class="stat-card">
+                <strong>Business-first scope</strong>
+                <span>Focused on response time, follow-up, scheduling, and smoother operations.</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
 
-      <section id="process">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Process</p>
-            <h2>How Operive works</h2>
-            <p class="section-copy">The goal is not “more AI”. The goal is a cleaner operating result.</p>
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="kicker">What Operive does</p>
+              <h2>Practical AI systems built around repeatable business workflows</h2>
+            </div>
           </div>
-        </div>
-        <div class="proof-grid">
-          <article class="proof">
-            <h3>01. Audit the bottleneck</h3>
-            <p>Map the workflow, find the friction, and decide what should change first.</p>
-          </article>
-          <article class="proof">
-            <h3>02. Implement the sprint</h3>
-            <p>Configure the workflow inside your current tools where possible and keep the scope tight.</p>
-          </article>
-          <article class="proof">
-            <h3>03. Train the team</h3>
-            <p>Rollout includes clear usage guidance, review expectations, and operator buy-in.</p>
-          </article>
-          <article class="proof">
-            <h3>04. Improve what works</h3>
-            <p>Tune prompts, routing, and rules from real usage instead of gut feel or vendor hype.</p>
-          </article>
+          <div class="grid grid-3">
+            <article class="card">
+              <h3>Lead intake and qualification</h3>
+              <p>
+                Capture inquiries from forms, messages, and calls, route them properly, and create a cleaner first response process.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Customer communication and follow-up</h3>
+              <p>
+                Improve responsiveness with structured reply workflows, reminder systems, and follow-up sequences that do not get lost.
+              </p>
+            </article>
+            <article class="card">
+              <h3>Operations workflows and task automation</h3>
+              <p>
+                Reduce manual admin work with triage, routing, summaries, and internal task handling connected to existing tools.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section id="fit">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Best fit</p>
-            <h2>Who this is for</h2>
-            <p class="section-copy">Operive is built for operators who want useful implementation, not AI hobby projects.</p>
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="kicker">Use cases</p>
+              <h2>Examples of the workflows small teams ask us to improve first</h2>
+            </div>
+            <a class="button button-secondary" href="use-cases.html">See all use cases</a>
           </div>
-        </div>
-        <div class="card-grid">
-          <article class="card">
-            <h3>Home-service businesses</h3>
-            <p>Especially strong fit for teams where calls, inquiries, quotes, and scheduling drive revenue.</p>
-          </article>
-          <article class="card">
-            <h3>Busy owner-led teams</h3>
-            <p>Best for businesses that need cleaner systems without adding bloated process or expensive platform churn.</p>
-          </article>
-          <article class="card">
-            <h3>Teams that want guardrails</h3>
-            <p>AI can help, but human review still matters where mistakes hit customers, cash flow, or reputation.</p>
-          </article>
+          <div class="grid grid-3">
+            <article class="card">
+              <h3>Lead capture and instant response</h3>
+              <p>Turn new inbound interest into routed, documented follow-up instead of delayed manual triage.</p>
+            </article>
+            <article class="card">
+              <h3>Scheduling and reminders</h3>
+              <p>Reduce scheduling friction with cleaner handoffs, confirmations, reminder flows, and calendar updates.</p>
+            </article>
+            <article class="card">
+              <h3>Internal admin routing</h3>
+              <p>Move requests, messages, and operational tasks to the right person faster with less back-and-forth.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section id="faq">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">FAQ</p>
-            <h2>Common questions</h2>
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="kicker">How it works</p>
+              <h2>Operational rollout, not vague AI strategy</h2>
+            </div>
+            <a class="button button-secondary" href="how-it-works.html">How it works</a>
           </div>
-        </div>
-        <div class="faq-grid">
-          <article class="faq panel">
-            <h3>Do you replace our tools?</h3>
-            <p>No. Operive prefers improving the stack you already use before recommending anything heavier.</p>
-          </article>
-          <article class="faq panel">
-            <h3>Do we need to automate everything?</h3>
-            <p>No. The right move is usually one workflow with clear ROI, not a giant AI overhaul.</p>
-          </article>
-          <article class="faq panel">
-            <h3>What if we need human review?</h3>
-            <p>Good. That is usually the right design. Sensitive steps should stay reviewable and accountable.</p>
-          </article>
-          <article class="faq panel">
-            <h3>How do we start?</h3>
-            <p>Send the workflow that is slow, messy, or leaking leads right now to hello@operive.com.</p>
-          </article>
+          <div class="grid grid-2">
+            <article class="card step-card">
+              <span class="step-number">01</span>
+              <h3>Assess the workflow</h3>
+              <p>We identify where delays, dropped handoffs, or repetitive work are creating friction for the team.</p>
+            </article>
+            <article class="card step-card">
+              <span class="step-number">02</span>
+              <h3>Configure the system</h3>
+              <p>We map rules, prompts, integrations, routing, and review steps around how the business already works.</p>
+            </article>
+            <article class="card step-card">
+              <span class="step-number">03</span>
+              <h3>Launch and monitor</h3>
+              <p>We deploy with clear workflow boundaries and watch how the system performs in real operating conditions.</p>
+            </article>
+            <article class="card step-card">
+              <span class="step-number">04</span>
+              <h3>Improve and expand</h3>
+              <p>Once one workflow is working well, we refine it and extend the same operating model into adjacent processes.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section id="contact">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2>Start with one workflow.</h2>
-            <p class="contact-copy">If one part of the business is slow, messy, or dropping leads, that is probably the right first project.</p>
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="kicker">Why Operive</p>
+              <h2>Built for businesses that want implementation, not experimentation for its own sake</h2>
+            </div>
+          </div>
+          <div class="grid grid-3">
+            <article class="card">
+              <h3>Practical workflow scope</h3>
+              <p>We focus on tasks that affect response time, scheduling, follow-up, customer communication, and operational throughput.</p>
+            </article>
+            <article class="card">
+              <h3>Integrations with existing tools</h3>
+              <p>Deployment is designed to fit the systems a business already uses instead of forcing a full rebuild of operations.</p>
+            </article>
+            <article class="card">
+              <h3>Monitored and optimized workflows</h3>
+              <p>We treat rollout as an operating system that should be reviewed, adjusted, and improved over time.</p>
+            </article>
           </div>
         </div>
-        <div class="contact-box">
-          <div class="panel contact-panel">
-            <h3>Contact Operive</h3>
-            <p class="contact-copy"><strong>Email:</strong> <a href="mailto:hello@operive.com">hello@operive.com</a></p>
-            <p class="contact-copy"><strong>Best fit:</strong> U.S. small businesses, especially home-service teams.</p>
-            <p class="contact-copy"><strong>Engagement style:</strong> workflow audit, implementation sprint, team training, and optimization.</p>
-            <ul class="list">
-              <li>Lead response and missed-call recovery</li>
-              <li>Booking and intake workflow cleanup</li>
-              <li>Admin triage and follow-up systems</li>
-              <li>Human-reviewed AI operations</li>
+      </section>
+
+      <section class="section">
+        <div class="container two-column">
+          <article class="page-panel">
+            <p class="kicker">Trust and safety</p>
+            <h2>Guardrails for real business usage</h2>
+            <ul class="text-list">
+              <li>Human review where customer impact, approvals, or exceptions matter.</li>
+              <li>Workflow boundaries that define what the system can and cannot do.</li>
+              <li>Tool access controls based on role, need, and operational risk.</li>
+              <li>Documentation and staff guidance so workflows are understandable and usable.</li>
             </ul>
+            <div class="inline-actions">
+              <a class="button button-secondary" href="trust-and-safety.html">Read trust and safety</a>
+            </div>
+          </article>
+          <aside class="sidebar-card">
+            <p class="kicker">Industry examples</p>
+            <h3>Best fit for small teams with recurring workflow pressure</h3>
+            <ul class="simple-list">
+              <li>Home services</li>
+              <li>Appointment-based businesses</li>
+              <li>Sales-driven SMBs</li>
+              <li>Operations-heavy small teams</li>
+            </ul>
+            <p><a href="industries.html">See industry examples</a></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <p class="kicker">FAQ</p>
+              <h2>Common questions</h2>
+            </div>
           </div>
-          <form class="panel contact-form" action="mailto:hello@operive.com" method="post" enctype="text/plain">
-            <label>
-              Name
-              <input type="text" name="name" placeholder="Your name" />
-            </label>
-            <label>
-              Business
-              <input type="text" name="business" placeholder="Company name" />
-            </label>
-            <label>
-              Email
-              <input type="email" name="email" placeholder="you@company.com" />
-            </label>
-            <label>
-              Workflow to fix first
-              <select name="workflow">
-                <option>Lead response</option>
-                <option>Missed-call recovery</option>
-                <option>Booking automation</option>
-                <option>Intake workflow</option>
-                <option>Inbox/admin triage</option>
-                <option>Other</option>
-              </select>
-            </label>
-            <label>
-              What is breaking now?
-              <textarea name="details" placeholder="What is slow, messy, or leaking leads right now?"></textarea>
-            </label>
-            <button class="btn btn-primary" type="submit">Start the conversation</button>
-            <p class="fine">If your mail app does not open from the form, email hello@operive.com directly.</p>
-          </form>
+          <div class="faq-list">
+            <article class="faq-item">
+              <h3>What kind of businesses is Operive built for?</h3>
+              <p>Small businesses and lean teams that need better lead handling, customer communication, scheduling, follow-up, and operations support.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Do you replace staff?</h3>
+              <p>No. The goal is to reduce manual bottlenecks, improve responsiveness, and support teams with clearer workflows.</p>
+            </article>
+            <article class="faq-item">
+              <h3>Do you only work with one industry?</h3>
+              <p>No. We work best where recurring workflows, intake volume, scheduling, and follow-up are important, across several small-business categories.</p>
+            </article>
+            <article class="faq-item">
+              <h3>How do engagements usually start?</h3>
+              <p>Usually with one workflow that clearly matters, then a deployment plan, implementation, monitoring, and refinement.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="cta-panel">
+          <p class="kicker">Ready to talk</p>
+          <h2>Start with the workflow that is costing your team the most time</h2>
+          <p class="page-intro">Book a demo to walk through the current process, the bottlenecks, and where a practical AI workflow can help first.</p>
+          <div class="hero-actions" style="justify-content:center;">
+            <a class="button button-primary" href="contact.html">Book a demo</a>
+            <a class="button button-secondary" href="use-cases.html">See use cases</a>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="wrap footer-grid">
+    <footer class="site-footer">
+      <div class="container footer-inner">
         <div>
-          <p><strong>Operive</strong></p>
-          <p>Practical AI workflow implementation for small businesses.</p>
+          <h3>Operive</h3>
+          <p>Operive helps small businesses implement practical AI workflows for customer communication, scheduling, follow-up, and operations.</p>
+          <p class="legal-copy"><a href="mailto:hello@operive.com">hello@operive.com</a></p>
+          <p class="legal-copy">© <span data-year></span> Operive. All rights reserved.</p>
         </div>
-        <div class="footer-links">
-          <a href="mailto:hello@operive.com">hello@operive.com</a>
-          <a href="/privacy.html">Privacy</a>
-          <a href="/terms.html">Terms</a>
+        <div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="use-cases.html">Use Cases</a></li>
+            <li><a href="industries.html">Industries</a></li>
+            <li><a href="trust-and-safety.html">Trust and Safety</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
         </div>
       </div>
     </footer>
+
+    <script src="app.js"></script>
   </body>
 </html>
