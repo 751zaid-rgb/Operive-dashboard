@@ -180,8 +180,12 @@ p {
   background: #ffffff;
   color: var(--text);
   font-weight: 700;
-  min-width: 10.5rem;
+  min-width: 5.75rem;
   box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
+}
+
+html[data-active-locale="ar"] .locale-switcher-wrap label {
+  letter-spacing: 0.08em;
 }
 
 .button {

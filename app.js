@@ -5,15 +5,11 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 const LOCALE_STORAGE_KEY = 'operive-locale';
 const localeManifest = {
   defaultLocale: 'en',
-  supportedLocales: ['en', 'es', 'fr', 'de', 'pt-BR', 'ar'],
+  supportedLocales: ['en', 'ar'],
   rtlLocales: ['ar'],
   localeLabels: {
-    en: 'English',
-    es: 'Español',
-    fr: 'Français',
-    de: 'Deutsch',
-    'pt-BR': 'Português (Brasil)',
-    ar: 'العربية',
+    en: 'EN',
+    ar: 'AR',
   },
   countryLocaleMap: {
     AE: 'ar', SA: 'ar', EG: 'ar', QA: 'ar', KW: 'ar', BH: 'ar', OM: 'ar', JO: 'ar', MA: 'ar', DZ: 'ar', TN: 'ar', IQ: 'ar',
@@ -44,15 +40,18 @@ const detectPreferredLocale = () => {
   const queryLocale = normalizeLocale(params.get('lang'));
   if (queryLocale) return queryLocale;
 
+  const htmlCountry = document.documentElement.dataset.country || '';
+  const htmlLocaleHint = normalizeLocale(document.documentElement.dataset.localeHint || '');
+  if (htmlLocaleHint) return htmlLocaleHint;
+
+  const countryLocale = localeManifest.countryLocaleMap[String(htmlCountry).toUpperCase()] || '';
+  if (countryLocale) return countryLocale;
+
   const browserLocales = Array.isArray(navigator.languages) ? navigator.languages : [navigator.language];
   for (const locale of browserLocales) {
     const normalized = normalizeLocale(locale);
     if (normalized) return normalized;
   }
-
-  const htmlCountry = document.documentElement.dataset.country || '';
-  const countryLocale = localeManifest.countryLocaleMap[String(htmlCountry).toUpperCase()] || '';
-  if (countryLocale) return countryLocale;
 
   return localeManifest.defaultLocale;
 };
@@ -65,6 +64,7 @@ const applyLocale = (locale) => {
   document.documentElement.dir = direction;
   document.body.dataset.locale = normalized;
   document.body.dataset.direction = direction;
+  document.documentElement.dataset.activeLocale = normalized;
 
   document.querySelectorAll('[data-locale-label]').forEach((node) => {
     node.textContent = localeManifest.localeLabels[normalized] || localeManifest.localeLabels.en;
