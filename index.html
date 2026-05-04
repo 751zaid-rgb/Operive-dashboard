@@ -28,6 +28,9 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%231f4fff'/%3E%3Cpath d='M18 34c0-9.4 6.7-16 14-16s14 6.6 14 16-6.7 16-14 16-14-6.6-14-16Z' fill='white'/%3E%3Cpath d='M24 28h16M24 34h16M24 40h16' stroke='%231f4fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
@@ -106,23 +109,23 @@
         </a>
         <nav aria-label="Primary navigation">
           <ul class="nav-links">
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="use-cases.html">Use Cases</a></li>
-            <li><a href="industries.html">Industries</a></li>
-            <li><a href="trust-and-safety.html">Trust and Safety</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="index.html" data-copy="navHome">Home</a></li>
+            <li><a href="services.html" data-copy="navServices">Services</a></li>
+            <li><a href="how-it-works.html" data-copy="navHow">How It Works</a></li>
+            <li><a href="use-cases.html" data-copy="navUseCases">Use Cases</a></li>
+            <li><a href="industries.html" data-copy="navIndustries">Industries</a></li>
+            <li><a href="trust-and-safety.html" data-copy="navTrust">Trust and Safety</a></li>
+            <li><a href="about.html" data-copy="navAbout">About</a></li>
+            <li><a href="contact.html" data-copy="navContact">Contact</a></li>
           </ul>
         </nav>
         <div class="nav-cta nav-utility-corner">
           <div class="locale-switcher-wrap" aria-label="Language selector">
-            <label for="locale-switcher">EN / AR</label>
+            <label for="locale-switcher" data-copy="selectorLabel">EN / AR</label>
             <select id="locale-switcher" class="locale-switcher" data-locale-switcher aria-label="Choose language"></select>
           </div>
-          <a class="button button-secondary" href="use-cases.html">See use cases</a>
-          <a class="button button-primary" href="contact.html">Book a workflow review</a>
+          <a class="button button-secondary" href="use-cases.html" data-copy="navSecondaryCta">See use cases</a>
+          <a class="button button-primary" href="contact.html" data-copy="navPrimaryCta">Book a workflow review</a>
         </div>
       </div>
     </header>
@@ -131,43 +134,43 @@
       <section class="home-hero">
         <div class="container hero-grid">
           <div>
-            <p class="eyebrow">Practical AI systems</p>
-            <h1>AI workflow automation for small businesses</h1>
-            <p class="lead">
+            <p class="eyebrow" data-copy="heroEyebrow">Practical AI systems</p>
+            <h1 data-copy="heroTitle">AI workflow automation for small businesses</h1>
+            <p class="lead" data-copy="heroLead">
               Turn operational chaos into a competitive advantage with practical AI workflow automation for lead handling, scheduling, follow-up, customer communication, and day-to-day operations.
             </p>
-            <p class="hero-note">Built for practical business workflows - not AI hype.</p>
+            <p class="hero-note" data-copy="heroNote">Built for practical business workflows - not AI hype.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="contact.html">Book a workflow review</a>
-              <a class="button button-secondary" href="use-cases.html">See use cases</a>
+              <a class="button button-primary" href="contact.html" data-copy="heroPrimaryCta">Book a workflow review</a>
+              <a class="button button-secondary" href="use-cases.html" data-copy="heroSecondaryCta">See use cases</a>
             </div>
           </div>
           <aside class="hero-panel">
             <div>
-              <p class="panel-label">Deployment themes</p>
+              <p class="panel-label" data-copy="panelLabel">Deployment themes</p>
               <ul class="check-list">
-                <li>Repeatable workflows</li>
-                <li>Fast implementation</li>
-                <li>Human-reviewed deployment</li>
-                <li>Ongoing optimization</li>
+                <li data-copy="panelBullet1">Repeatable workflows</li>
+                <li data-copy="panelBullet2">Fast implementation</li>
+                <li data-copy="panelBullet3">Human-reviewed deployment</li>
+                <li data-copy="panelBullet4">Ongoing optimization</li>
               </ul>
             </div>
             <div class="stat-row">
               <div class="stat-card">
-                <strong>Implementation and deployment</strong>
-                <span>Configured around real processes, not demo scripts.</span>
+                <strong data-copy="stat1Title">Implementation and deployment</strong>
+                <span data-copy="stat1Body">Configured around real processes, not demo scripts.</span>
               </div>
               <div class="stat-card">
-                <strong>Existing tool integrations</strong>
-                <span>Works with calendars, inboxes, CRMs, and operational tools already in use.</span>
+                <strong data-copy="stat2Title">Existing tool integrations</strong>
+                <span data-copy="stat2Body">Works with calendars, inboxes, CRMs, and operational tools already in use.</span>
               </div>
               <div class="stat-card">
-                <strong>Monitored workflows</strong>
-                <span>Boundaries, review points, and performance checks are built into rollout.</span>
+                <strong data-copy="stat3Title">Monitored workflows</strong>
+                <span data-copy="stat3Body">Boundaries, review points, and performance checks are built into rollout.</span>
               </div>
               <div class="stat-card">
-                <strong>Business-first scope</strong>
-                <span>Focused on response time, follow-up, scheduling, and smoother operations.</span>
+                <strong data-copy="stat4Title">Business-first scope</strong>
+                <span data-copy="stat4Body">Focused on response time, follow-up, scheduling, and smoother operations.</span>
               </div>
             </div>
           </aside>
@@ -178,27 +181,27 @@
         <div class="container">
             <div class="section-header">
               <div>
-                <p class="kicker">What Operive does</p>
-                <h2>Practical AI systems built around repeatable business workflows</h2>
-                <p>We help small businesses implement AI automation where responsiveness, handoffs, and repetitive admin work are slowing growth.</p>
+                <p class="kicker" data-copy="section1Kicker">What Operive does</p>
+                <h2 data-copy="section1Title">Practical AI systems built around repeatable business workflows</h2>
+                <p data-copy="section1Body">We help small businesses implement AI automation where responsiveness, handoffs, and repetitive admin work are slowing growth.</p>
               </div>
             </div>
           <div class="grid grid-3">
             <article class="card">
-              <h3>Lead intake and qualification</h3>
-              <p>
+              <h3 data-copy="card1Title">Lead intake and qualification</h3>
+              <p data-copy="card1Body">
                 Capture inquiries from forms, messages, and calls, route them properly, and create a cleaner first response process.
               </p>
             </article>
             <article class="card">
-              <h3>Customer communication and follow-up</h3>
-              <p>
+              <h3 data-copy="card2Title">Customer communication and follow-up</h3>
+              <p data-copy="card2Body">
                 Improve responsiveness with structured reply workflows, reminder systems, and follow-up sequences that do not get lost.
               </p>
             </article>
             <article class="card">
-              <h3>Operations workflows and task automation</h3>
-              <p>
+              <h3 data-copy="card3Title">Operations workflows and task automation</h3>
+              <p data-copy="card3Body">
                 Reduce manual admin work with triage, routing, summaries, and internal task handling connected to existing tools.
               </p>
             </article>
@@ -210,23 +213,23 @@
         <div class="container">
           <div class="section-header">
             <div>
-              <p class="kicker">Use cases</p>
-              <h2>Examples of the workflows small teams ask us to improve first</h2>
+              <p class="kicker" data-copy="section2Kicker">Use cases</p>
+              <h2 data-copy="section2Title">Examples of the workflows small teams ask us to improve first</h2>
             </div>
-            <a class="button button-secondary" href="use-cases.html">See all use cases</a>
+            <a class="button button-secondary" href="use-cases.html" data-copy="section2Cta">See all use cases</a>
           </div>
           <div class="grid grid-3">
             <article class="card">
-              <h3>Lead capture and instant response</h3>
-              <p>Turn new inbound interest into routed, documented follow-up instead of delayed manual triage.</p>
+              <h3 data-copy="use1Title">Lead capture and instant response</h3>
+              <p data-copy="use1Body">Turn new inbound interest into routed, documented follow-up instead of delayed manual triage.</p>
             </article>
             <article class="card">
-              <h3>Scheduling and reminders</h3>
-              <p>Reduce scheduling friction with cleaner handoffs, confirmations, reminder flows, and calendar updates.</p>
+              <h3 data-copy="use2Title">Scheduling and reminders</h3>
+              <p data-copy="use2Body">Reduce scheduling friction with cleaner handoffs, confirmations, reminder flows, and calendar updates.</p>
             </article>
             <article class="card">
-              <h3>Internal admin routing</h3>
-              <p>Move requests, messages, and operational tasks to the right person faster with less back-and-forth.</p>
+              <h3 data-copy="use3Title">Internal admin routing</h3>
+              <p data-copy="use3Body">Move requests, messages, and operational tasks to the right person faster with less back-and-forth.</p>
             </article>
           </div>
         </div>
@@ -236,31 +239,31 @@
         <div class="container">
           <div class="section-header">
             <div>
-              <p class="kicker">How it works</p>
-              <h2>Operational rollout, not vague AI strategy</h2>
+              <p class="kicker" data-copy="section3Kicker">How it works</p>
+              <h2 data-copy="section3Title">Operational rollout, not vague AI strategy</h2>
             </div>
-            <a class="button button-secondary" href="how-it-works.html">How it works</a>
+            <a class="button button-secondary" href="how-it-works.html" data-copy="section3Cta">How it works</a>
           </div>
           <div class="grid grid-2">
             <article class="card step-card">
               <span class="step-number">01</span>
-              <h3>Assess the workflow</h3>
-              <p>We identify where delays, dropped handoffs, or repetitive work are creating friction for the team.</p>
+              <h3 data-copy="step1Title">Assess the workflow</h3>
+              <p data-copy="step1Body">We identify where delays, dropped handoffs, or repetitive work are creating friction for the team.</p>
             </article>
             <article class="card step-card">
               <span class="step-number">02</span>
-              <h3>Configure the system</h3>
-              <p>We map rules, prompts, integrations, routing, and review steps around how the business already works.</p>
+              <h3 data-copy="step2Title">Configure the system</h3>
+              <p data-copy="step2Body">We map rules, prompts, integrations, routing, and review steps around how the business already works.</p>
             </article>
             <article class="card step-card">
               <span class="step-number">03</span>
-              <h3>Launch and monitor</h3>
-              <p>We deploy with clear workflow boundaries and watch how the system performs in real operating conditions.</p>
+              <h3 data-copy="step3Title">Launch and monitor</h3>
+              <p data-copy="step3Body">We deploy with clear workflow boundaries and watch how the system performs in real operating conditions.</p>
             </article>
             <article class="card step-card">
               <span class="step-number">04</span>
-              <h3>Improve and expand</h3>
-              <p>Once one workflow is working well, we refine it and extend the same operating model into adjacent processes.</p>
+              <h3 data-copy="step4Title">Improve and expand</h3>
+              <p data-copy="step4Body">Once one workflow is working well, we refine it and extend the same operating model into adjacent processes.</p>
             </article>
           </div>
         </div>
@@ -270,22 +273,22 @@
         <div class="container">
           <div class="section-header">
             <div>
-              <p class="kicker">Why Operive</p>
-              <h2>Built for businesses that want implementation, not experimentation for its own sake</h2>
+              <p class="kicker" data-copy="section4Kicker">Why Operive</p>
+              <h2 data-copy="section4Title">Built for businesses that want implementation, not experimentation for its own sake</h2>
             </div>
           </div>
           <div class="grid grid-3">
             <article class="card">
-              <h3>Practical workflow scope</h3>
-              <p>We focus on tasks that affect response time, scheduling, follow-up, customer communication, and operational throughput.</p>
+              <h3 data-copy="why1Title">Practical workflow scope</h3>
+              <p data-copy="why1Body">We focus on tasks that affect response time, scheduling, follow-up, customer communication, and operational throughput.</p>
             </article>
             <article class="card">
-              <h3>Integrations with existing tools</h3>
-              <p>Deployment is designed to fit the systems a business already uses instead of forcing a full rebuild of operations.</p>
+              <h3 data-copy="why2Title">Integrations with existing tools</h3>
+              <p data-copy="why2Body">Deployment is designed to fit the systems a business already uses instead of forcing a full rebuild of operations.</p>
             </article>
             <article class="card">
-              <h3>Monitored and optimized workflows</h3>
-              <p>We treat rollout as an operating system that should be reviewed, adjusted, and improved over time.</p>
+              <h3 data-copy="why3Title">Monitored and optimized workflows</h3>
+              <p data-copy="why3Body">We treat rollout as an operating system that should be reviewed, adjusted, and improved over time.</p>
             </article>
           </div>
         </div>
@@ -294,28 +297,28 @@
       <section class="section">
         <div class="container two-column">
           <article class="page-panel">
-            <p class="kicker">Trust and safety</p>
-            <h2>Guardrails for real business usage</h2>
+            <p class="kicker" data-copy="trustKicker">Trust and safety</p>
+            <h2 data-copy="trustTitle">Guardrails for real business usage</h2>
             <ul class="text-list">
-              <li>Human review where customer impact, approvals, or exceptions matter.</li>
-              <li>Workflow boundaries that define what the system can and cannot do.</li>
-              <li>Tool access controls based on role, need, and operational risk.</li>
-              <li>Documentation and staff guidance so workflows are understandable and usable.</li>
+              <li data-copy="trust1">Human review where customer impact, approvals, or exceptions matter.</li>
+              <li data-copy="trust2">Workflow boundaries that define what the system can and cannot do.</li>
+              <li data-copy="trust3">Tool access controls based on role, need, and operational risk.</li>
+              <li data-copy="trust4">Documentation and staff guidance so workflows are understandable and usable.</li>
             </ul>
             <div class="inline-actions">
-              <a class="button button-secondary" href="trust-and-safety.html">Read trust and safety</a>
+              <a class="button button-secondary" href="trust-and-safety.html" data-copy="trustCta">Read trust and safety</a>
             </div>
           </article>
           <aside class="sidebar-card">
-            <p class="kicker">Industry examples</p>
-            <h3>Best fit for small teams with recurring workflow pressure</h3>
+            <p class="kicker" data-copy="industryKicker">Industry examples</p>
+            <h3 data-copy="industryTitle">Best fit for small teams with recurring workflow pressure</h3>
             <ul class="simple-list">
-              <li>Home services</li>
-              <li>Appointment-based businesses</li>
-              <li>Sales-driven SMBs</li>
-              <li>Operations-heavy small teams</li>
+              <li data-copy="industry1">Home services</li>
+              <li data-copy="industry2">Appointment-based businesses</li>
+              <li data-copy="industry3">Sales-driven SMBs</li>
+              <li data-copy="industry4">Operations-heavy small teams</li>
             </ul>
-            <p><a href="industries.html">See industry examples</a></p>
+            <p><a href="industries.html" data-copy="industryCta">See industry examples</a></p>
           </aside>
         </div>
       </section>
@@ -351,12 +354,12 @@
 
       <section class="container">
         <div class="cta-panel">
-          <p class="kicker">Ready to talk</p>
-          <h2>Start with the workflow that is costing your team the most time</h2>
-          <p class="page-intro">Book a workflow review to walk through the current process, the bottlenecks, and where a practical AI workflow can improve lead capture, qualification, and follow-up first.</p>
+          <p class="kicker" data-copy="closingKicker">Start with one workflow</p>
+          <h2 data-copy="closingTitle">Start with the workflow that is costing your team the most time</h2>
+          <p class="page-intro" data-copy="closingBody">Book a workflow review to walk through the current process, the bottlenecks, and where a practical AI workflow can improve lead capture, qualification, and follow-up first.</p>
           <div class="hero-actions" style="justify-content:center;">
-            <a class="button button-primary" href="contact.html">Book a workflow review</a>
-            <a class="button button-secondary" href="use-cases.html">See use cases</a>
+            <a class="button button-primary" href="contact.html" data-copy="closingPrimary">Book a workflow review</a>
+            <a class="button button-secondary" href="use-cases.html" data-copy="closingSecondary">See use cases</a>
           </div>
         </div>
       </section>
@@ -373,13 +376,13 @@
         <div>
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="use-cases.html">Use Cases</a></li>
-            <li><a href="industries.html">Industries</a></li>
-            <li><a href="trust-and-safety.html">Trust and Safety</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="services.html" data-copy="navServices">Services</a></li>
+            <li><a href="how-it-works.html" data-copy="navHow">How It Works</a></li>
+            <li><a href="use-cases.html" data-copy="navUseCases">Use Cases</a></li>
+            <li><a href="industries.html" data-copy="navIndustries">Industries</a></li>
+            <li><a href="trust-and-safety.html" data-copy="navTrust">Trust and Safety</a></li>
+            <li><a href="about.html" data-copy="navAbout">About</a></li>
+            <li><a href="contact.html" data-copy="navContact">Contact</a></li>
             <li><a href="privacy.html">Privacy</a></li>
             <li><a href="terms.html">Terms</a></li>
           </ul>
