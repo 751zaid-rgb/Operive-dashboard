@@ -158,39 +158,26 @@ p {
 .locale-switcher-wrap {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.4rem 0.55rem 0.4rem 0.85rem;
-  border: 1px solid var(--border);
+  gap: 0;
+  padding: 0.18rem;
+  border: 1px solid rgba(31, 79, 255, 0.12);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: var(--shadow);
-}
-
-.locale-switcher-wrap label {
-  display: inline-flex;
-  align-items: center;
-  margin: 0;
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--muted);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
 }
 
 .locale-switcher {
-  min-height: 2.8rem;
-  border: 1px solid rgba(31, 79, 255, 0.16);
+  min-height: 2.2rem;
+  border: 0;
   border-radius: 999px;
-  padding: 0.65rem 2.2rem 0.65rem 0.95rem;
-  background: #ffffff;
+  padding: 0.35rem 1.7rem 0.35rem 0.7rem;
+  background: transparent;
   color: var(--text);
   font-weight: 700;
-  min-width: 5.75rem;
-  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
-}
-
-html[data-active-locale="ar"] .locale-switcher-wrap label {
+  font-size: 0.82rem;
   letter-spacing: 0.08em;
+  min-width: 4.15rem;
+  box-shadow: none;
 }
 
 .button {
