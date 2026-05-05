@@ -32,7 +32,8 @@ body {
 }
 
 html[data-active-locale="ar"] body {
-  font-family: "IBM Plex Sans Arabic", "Noto Sans Arabic", Inter, ui-sans-serif, system-ui, sans-serif;
+  font-family: "IBM Plex Sans Arabic", "Cairo", sans-serif;
+  line-height: 1.7;
 }
 
 a {
@@ -278,6 +279,24 @@ h3 {
   font-size: 1.3rem;
 }
 
+html[data-active-locale="ar"] h1 {
+  font-size: clamp(3rem, 6vw, 3.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+html[data-active-locale="ar"] h2 {
+  font-size: clamp(2rem, 4.2vw, 2.5rem);
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+html[data-active-locale="ar"] h3 {
+  font-size: clamp(1.5rem, 2.8vw, 1.75rem);
+  line-height: 1.35;
+  font-weight: 700;
+}
+
 .card h2,
 .page-panel h2,
 .sidebar-card h2,
@@ -299,8 +318,18 @@ html[data-active-locale="ar"] .page-intro,
 html[data-active-locale="ar"] .card p,
 html[data-active-locale="ar"] .sidebar-card p,
 html[data-active-locale="ar"] .contact-card p {
-  line-height: 1.9;
-  max-width: 34ch;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.8;
+  max-width: 32ch;
+}
+
+html[data-active-locale="ar"] .hero-note,
+html[data-active-locale="ar"] .form-help,
+html[data-active-locale="ar"] .simple-list li,
+html[data-active-locale="ar"] .check-list li,
+html[data-active-locale="ar"] .text-list li {
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 .hero-actions,
@@ -377,6 +406,10 @@ html[data-active-locale="ar"] .contact-card p {
   padding: 1.6rem 0 3.7rem;
 }
 
+html[data-active-locale="ar"] .section {
+  padding: 2.5rem 0 4.75rem;
+}
+
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -402,6 +435,15 @@ html[data-active-locale="ar"] .contact-card p {
 .contact-card,
 .sidebar-card {
   padding: 1.6rem;
+}
+
+html[data-active-locale="ar"] .card,
+html[data-active-locale="ar"] .contact-card,
+html[data-active-locale="ar"] .sidebar-card,
+html[data-active-locale="ar"] .page-panel,
+html[data-active-locale="ar"] .hero-panel,
+html[data-active-locale="ar"] .cta-panel {
+  padding: 2rem;
 }
 
 .card p,
@@ -594,6 +636,11 @@ body[data-direction="rtl"] .section-header {
   flex-direction: row-reverse;
 }
 
+body[data-direction="rtl"] .step-number {
+  left: auto;
+  right: 1.4rem;
+}
+
 body[data-direction="rtl"] .brand,
 body[data-direction="rtl"] .nav-links,
 body[data-direction="rtl"] .simple-list li,
@@ -622,6 +669,21 @@ body[data-direction="rtl"] .sidebar-card,
 body[data-direction="rtl"] .contact-card,
 body[data-direction="rtl"] .cta-panel {
   align-items: flex-end;
+}
+
+body[data-direction="rtl"] .button,
+body[data-direction="rtl"] .locale-switcher,
+body[data-direction="rtl"] .nav-links a {
+  direction: rtl;
+}
+
+body[data-direction="rtl"] .hero-actions,
+body[data-direction="rtl"] .inline-actions {
+  justify-content: flex-end;
+}
+
+body[data-direction="rtl"] .section-header {
+  align-items: flex-start;
 }
 
 body[data-direction="rtl"] .check-list li,
