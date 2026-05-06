@@ -68,6 +68,7 @@
           <article class="form-card page-panel">
             <h2>Tell us what needs to convert better</h2>
             <p class="form-help">This captures contact details, qualification context, and lead-source metadata so the right conversations can be prioritized quickly.</p>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
             <form action="https://formspree.io/f/mqeggyry" method="POST" id="lead-capture-form" data-webhook-url="https://hook.us2.make.com/tbxt5g0gajxdo311y53we6frqjmw5n6p" data-booking-url="https://calendly.com/operive/30min">
               <input type="hidden" name="_next" value="https://www.operive.com/thanks.html" />
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true" />
@@ -80,23 +81,23 @@
               <input type="hidden" name="utm-campaign" />
               <label>
                 Full Name
-                <input type="text" name="name" required />
+                <input type="text" name="name" autocomplete="name" required />
               </label>
               <label>
                 Company
-                <input type="text" name="company" required />
+                <input type="text" name="company" autocomplete="organization" required />
               </label>
               <label>
                 Work Email
-                <input type="email" name="work-email" required />
+                <input type="email" name="work-email" autocomplete="email" inputmode="email" required />
               </label>
               <label>
                 Phone or direct line
-                <input type="tel" name="phone" />
+                <input type="tel" name="phone" autocomplete="tel" inputmode="tel" />
               </label>
               <label>
                 Website
-                <input type="url" name="website" placeholder="https://" />
+                <input type="url" name="website" autocomplete="url" inputmode="url" placeholder="https://" />
               </label>
               <label>
                 Inquiry Type

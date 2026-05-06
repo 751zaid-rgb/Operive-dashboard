@@ -306,13 +306,94 @@ if (leadCaptureForm) {
   };
 
   const button = leadCaptureForm.querySelector('button[type="submit"]');
+  const defaultButtonText = button ? button.textContent : '';
   const nextField = leadCaptureForm.querySelector('[name="_next"]');
+  const statusNode = document.querySelector('#form-status');
   const bookingTimelines = new Set(['ASAP', 'This month']);
   const wantsBooking = (formData) => {
     const nextStep = formData.get('best-next-step');
     const timeline = formData.get('timeline');
 
     return nextStep === 'I want to book a call' || bookingTimelines.has(String(timeline));
+  };
+
+  const setStatus = (message = '', state = '') => {
+    if (!statusNode) return;
+    statusNode.textContent = message;
+    if (state) {
+      statusNode.dataset.state = state;
+    } else {
+      delete statusNode.dataset.state;
+    }
+  };
+
+  const getFieldLabel = (field) => {
+    const label = field.closest('label');
+    if (!label) return 'This field';
+
+    return Array.from(label.childNodes)
+      .filter((node) => node.nodeType === Node.TEXT_NODE)
+      .map((node) => node.textContent.replace(/\s+/g, ' ').trim())
+      .find(Boolean) || 'This field';
+  };
+
+  const getErrorNode = (field) => {
+    const label = field.closest('label');
+    if (!label || !field.name) return null;
+
+    const errorId = `${field.name}-error`;
+    let errorNode = label.querySelector(`#${CSS.escape(errorId)}`);
+
+    if (!errorNode) {
+      errorNode = document.createElement('p');
+      errorNode.className = 'form-error';
+      errorNode.id = errorId;
+      label.appendChild(errorNode);
+    }
+
+    const describedBy = new Set((field.getAttribute('aria-describedby') || '').split(/\s+/).filter(Boolean));
+    describedBy.add(errorId);
+    field.setAttribute('aria-describedby', Array.from(describedBy).join(' '));
+
+    return errorNode;
+  };
+
+  const clearFieldError = (field) => {
+    field.removeAttribute('aria-invalid');
+    const errorNode = getErrorNode(field);
+    if (errorNode) errorNode.textContent = '';
+  };
+
+  const validateField = (field) => {
+    const value = typeof field.value === 'string' ? field.value.trim() : field.value;
+    const label = getFieldLabel(field);
+    let message = '';
+
+    if (field.required && !value) {
+      message = `${label} is required.`;
+    } else if (field.type === 'email' && value && !field.validity.valid) {
+      message = 'Enter a valid email address.';
+    } else if (field.type === 'url' && value && !field.validity.valid) {
+      message = 'Enter a valid website URL, including https://';
+    }
+
+    const errorNode = getErrorNode(field);
+    if (message) {
+      field.setAttribute('aria-invalid', 'true');
+      if (errorNode) errorNode.textContent = message;
+      return message;
+    }
+
+    clearFieldError(field);
+    return '';
+  };
+
+  const validateForm = () => {
+    const fields = Array.from(leadCaptureForm.querySelectorAll('input, select, textarea'))
+      .filter((field) => field.type !== 'hidden' && field.type !== 'submit');
+
+    const invalidFields = fields.filter((field) => Boolean(validateField(field)));
+    return invalidFields;
   };
 
   const buildPayload = (formData, bookingRequested) => ({
@@ -350,13 +431,15 @@ if (leadCaptureForm) {
   const disableButton = () => {
     if (!button) return;
     button.disabled = true;
+    button.setAttribute('aria-busy', 'true');
     button.textContent = 'Sending…';
   };
 
   const enableButton = () => {
     if (!button) return;
     button.disabled = false;
-    button.textContent = 'Request workflow review';
+    button.removeAttribute('aria-busy');
+    button.textContent = defaultButtonText || 'Request workflow review';
   };
 
   const submitWebhook = async (payload) => {
@@ -383,9 +466,37 @@ if (leadCaptureForm) {
   setValue('utm-medium', params.get('utm_medium') || '');
   setValue('utm-campaign', params.get('utm_campaign') || '');
 
+  leadCaptureForm.querySelectorAll('input, select, textarea').forEach((field) => {
+    if (field.type === 'hidden' || field.type === 'submit') return;
+
+    const validateCurrentField = () => {
+      validateField(field);
+      if (!leadCaptureForm.querySelector('[aria-invalid="true"]')) {
+        setStatus('');
+      }
+    };
+
+    field.addEventListener('blur', validateCurrentField);
+    field.addEventListener('input', () => {
+      if (field.getAttribute('aria-invalid') === 'true') validateCurrentField();
+    });
+    field.addEventListener('change', () => {
+      if (field.getAttribute('aria-invalid') === 'true') validateCurrentField();
+    });
+  });
+
   leadCaptureForm.addEventListener('submit', async (event) => {
     event.preventDefault();
+
+    const invalidFields = validateForm();
+    if (invalidFields.length) {
+      setStatus(`Please review ${invalidFields.length === 1 ? 'the highlighted field' : `the ${invalidFields.length} highlighted fields`} and try again.`, 'error');
+      invalidFields[0].focus();
+      return;
+    }
+
     disableButton();
+    setStatus('Sending your request…', 'progress');
 
     const formData = new FormData(leadCaptureForm);
     const bookingRequested = wantsBooking(formData);
@@ -402,10 +513,12 @@ if (leadCaptureForm) {
     const webhookDelivered = await submitWebhook(payload);
 
     if (webhookDelivered) {
+      setStatus('Thanks — sending you to the next step…', 'progress');
       window.location.href = fallbackRedirect;
       return;
     }
 
+    setStatus('Secure handoff failed, so we are sending your request through the backup form now.', 'progress');
     enableButton();
     HTMLFormElement.prototype.submit.call(leadCaptureForm);
   });
