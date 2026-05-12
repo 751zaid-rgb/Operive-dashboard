@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="72" viewBox="0 0 320 72" role="img" aria-label="Operive logo inverse">
+  <defs>
+    <linearGradient id="operiveLogoGradientInv" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#335cff" />
+      <stop offset="100%" stop-color="#6a85ff" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="4" width="56" height="56" rx="16" fill="url(#operiveLogoGradientInv)" />
+  <path d="M17 32c0-7.2 5.8-13 13-13h5.8v6H30a7 7 0 0 0 0 14h5.8v6H30c-7.2 0-13-5.8-13-13Z" fill="#ffffff" />
+  <circle cx="39.5" cy="25.5" r="4.5" fill="#ffffff" opacity="0.96" />
+  <path d="M38.2 28.9 26.6 40.4" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" opacity="0.92" />
+  <g fill="#ffffff" font-family="Inter, Arial, sans-serif">
+    <text x="74" y="43" font-size="29" font-weight="800" letter-spacing="-0.04em">Operive</text>
+    <text x="76" y="58" font-size="10.5" font-weight="700" letter-spacing="0.12em" fill="rgba(255,255,255,0.76)">PRACTICAL AI WORKFLOWS</text>
+  </g>
+</svg>
