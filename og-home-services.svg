@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Operive Home Services Open Graph Card</title>
+  <desc id="desc">Operive home services social card with intake-focused headline, WhatsApp and Telegram subline, and subtle home-service visual.</desc>
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0f1e"/>
+      <stop offset="100%" stop-color="#111b36"/>
+    </linearGradient>
+    <linearGradient id="accent-gradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#335cff"/>
+      <stop offset="100%" stop-color="#6b8fff"/>
+    </linearGradient>
+    <radialGradient id="glow-left" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 152) rotate(40) scale(340 340)">
+      <stop offset="0%" stop-color="#6b8fff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6b8fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-right" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 306) rotate(180) scale(320 320)">
+      <stop offset="0%" stop-color="#335cff" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#335cff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" rx="36" fill="url(#bg-gradient)"/>
+  <rect width="1200" height="630" rx="36" fill="url(#glow-left)"/>
+  <rect width="1200" height="630" rx="36" fill="url(#glow-right)"/>
+  <rect x="100" y="100" width="1000" height="430" rx="28" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+
+  <g font-family="Sora, 'DM Sans', 'Space Grotesk', Arial, sans-serif" fill="#ffffff">
+    <text x="120" y="150" font-size="38" font-weight="800" letter-spacing="-0.03em">Operive</text>
+    <text x="120" y="214" font-size="22" font-weight="700" letter-spacing="0.2em" fill="#a0aec0">FOR HOME SERVICES</text>
+    <text x="120" y="308" font-size="78" font-weight="800" letter-spacing="-0.05em">Every Inquiry</text>
+    <text x="120" y="392" font-size="78" font-weight="800" letter-spacing="-0.05em">Captured. Instantly.</text>
+    <text x="120" y="458" font-size="31" font-weight="500" fill="#a0aec0">AI intake on WhatsApp &amp; Telegram</text>
+  </g>
+
+  <g transform="translate(820 148)" opacity="0.95">
+    <circle cx="146" cy="162" r="150" fill="url(#accent-gradient)" opacity="0.12" filter="url(#soft-glow)"/>
+    <path d="M84 184 146 128 208 184V246H168V204H124V246H84Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.18)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M66 188 146 114 226 188" fill="none" stroke="url(#accent-gradient)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M101 101c15 15 15 40 0 55l-15 15 21 21-14 14-21-21-16 16c-15 15-40 15-55 0s-15-40 0-55l16-16-19-19 14-14 19 19 15-15c15-15 40-15 55 0Z" fill="none" stroke="#8da9ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+    <circle cx="73" cy="129" r="8" fill="#6b8fff"/>
+    <circle cx="189" cy="202" r="8" fill="#335cff"/>
+  </g>
+
+  <g transform="translate(901 496)">
+    <rect x="0" y="0" width="179" height="36" rx="18" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)"/>
+    <text x="89.5" y="24" text-anchor="middle" font-family="Sora, 'DM Sans', 'Space Grotesk', Arial, sans-serif" font-size="17" font-weight="700" fill="#ffffff">Home Services AI</text>
+  </g>
+</svg>
