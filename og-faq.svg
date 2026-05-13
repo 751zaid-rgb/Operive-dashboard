@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Operive FAQ Open Graph Card</title>
+  <desc id="desc">Operive FAQ social card with support-focused headline, short subline, and glowing question mark visual.</desc>
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0f1e"/>
+      <stop offset="100%" stop-color="#111b36"/>
+    </linearGradient>
+    <linearGradient id="accent-gradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#335cff"/>
+      <stop offset="100%" stop-color="#6b8fff"/>
+    </linearGradient>
+    <radialGradient id="glow-left" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 152) rotate(40) scale(340 340)">
+      <stop offset="0%" stop-color="#6b8fff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6b8fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-right" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(938 304) rotate(180) scale(320 320)">
+      <stop offset="0%" stop-color="#335cff" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#335cff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" rx="36" fill="url(#bg-gradient)"/>
+  <rect width="1200" height="630" rx="36" fill="url(#glow-left)"/>
+  <rect width="1200" height="630" rx="36" fill="url(#glow-right)"/>
+  <rect x="100" y="100" width="1000" height="430" rx="28" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+
+  <g font-family="Sora, 'DM Sans', 'Space Grotesk', Arial, sans-serif" fill="#ffffff">
+    <text x="120" y="150" font-size="38" font-weight="800" letter-spacing="-0.03em">Operive</text>
+    <text x="120" y="214" font-size="22" font-weight="700" letter-spacing="0.2em" fill="#a0aec0">FREQUENTLY ASKED</text>
+    <text x="120" y="308" font-size="78" font-weight="800" letter-spacing="-0.05em">Questions?</text>
+    <text x="120" y="392" font-size="78" font-weight="800" letter-spacing="-0.05em">We've Got Answers.</text>
+    <text x="120" y="458" font-size="31" font-weight="500" fill="#a0aec0">Everything you need to know before you start</text>
+  </g>
+
+  <g transform="translate(826 144)" opacity="0.98">
+    <circle cx="142" cy="166" r="150" fill="url(#accent-gradient)" opacity="0.12" filter="url(#soft-glow)"/>
+    <circle cx="142" cy="166" r="96" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
+    <path d="M116 125c0-22 17-40 40-40 25 0 43 17 43 39 0 15-8 27-23 37-14 10-18 17-18 30" fill="none" stroke="url(#accent-gradient)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="158" cy="246" r="10" fill="#ffffff"/>
+    <circle cx="108" cy="126" r="6" fill="#8da9ff"/>
+    <circle cx="216" cy="110" r="6" fill="#6b8fff"/>
+    <circle cx="206" cy="232" r="6" fill="#8da9ff"/>
+  </g>
+</svg>
