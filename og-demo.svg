@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Operive Demo Open Graph Card</title>
+  <desc id="desc">Operive demo social card with real-call headline, short booking subline, and play/chat visual.</desc>
+  <defs>
+    <linearGradient id="bg-gradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0a0f1e"/>
+      <stop offset="100%" stop-color="#111b36"/>
+    </linearGradient>
+    <linearGradient id="accent-gradient" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#335cff"/>
+      <stop offset="100%" stop-color="#6b8fff"/>
+    </linearGradient>
+    <radialGradient id="glow-left" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 152) rotate(40) scale(340 340)">
+      <stop offset="0%" stop-color="#6b8fff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#6b8fff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-right" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 306) rotate(180) scale(320 320)">
+      <stop offset="0%" stop-color="#335cff" stop-opacity="0.26"/>
+      <stop offset="100%" stop-color="#335cff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" rx="36" fill="url(#bg-gradient)"/>
+  <rect width="1200" height="630" rx="36" fill="url(#glow-left)"/>
+  <rect width="1200" height="630" rx="36" fill="url(#glow-right)"/>
+  <rect x="100" y="100" width="1000" height="430" rx="28" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+
+  <g font-family="Sora, 'DM Sans', 'Space Grotesk', Arial, sans-serif" fill="#ffffff">
+    <text x="120" y="150" font-size="38" font-weight="800" letter-spacing="-0.03em">Operive</text>
+    <text x="120" y="214" font-size="22" font-weight="700" letter-spacing="0.2em" fill="#a0aec0">SEE IT IN ACTION</text>
+    <text x="120" y="308" font-size="78" font-weight="800" letter-spacing="-0.05em">Watch the AI</text>
+    <text x="120" y="392" font-size="78" font-weight="800" letter-spacing="-0.05em">Handle a Real Call.</text>
+    <text x="120" y="458" font-size="31" font-weight="500" fill="#a0aec0">Book a Telegram demo — takes 10 minutes</text>
+  </g>
+
+  <g transform="translate(812 160)" opacity="0.97">
+    <circle cx="150" cy="150" r="150" fill="url(#accent-gradient)" opacity="0.1" filter="url(#soft-glow)"/>
+    <path d="M74 88c0-24.301 19.699-44 44-44h100c24.301 0 44 19.699 44 44v72c0 24.301-19.699 44-44 44h-54l-34 30c-5.57 4.917-14.57.956-14.57-6.339V204H118c-24.301 0-44-19.699-44-44V88Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.16)" stroke-width="4"/>
+    <circle cx="168" cy="126" r="52" fill="url(#accent-gradient)" opacity="0.9"/>
+    <path d="M154 101v50l39-25z" fill="#ffffff"/>
+    <circle cx="128" cy="166" r="8" fill="#8da9ff"/>
+    <circle cx="158" cy="166" r="8" fill="#ffffff" opacity="0.9"/>
+    <circle cx="188" cy="166" r="8" fill="#8da9ff"/>
+  </g>
+</svg>
