@@ -170,53 +170,15 @@
       } else {
         initLocaleControls();
       }
-    })();</script> <div class="site-shell"> <header class="site-header"> <div class="container nav-wrap"> <a class="brand" href="/" aria-label="Operive home"> <img class="brand-logo" src="/logo.svg" alt="Operive logo" width="320" height="72"> </a> <nav class="nav-links" aria-label="Primary"> <a href="/" data-i18n="common.nav.home">Home</a><a href="/restaurant-ai-front-desk" data-i18n="common.nav.restaurants">Restaurants</a><a href="/home-services-ai-intake" data-i18n="common.nav.homeServices">Home Services</a><a href="/pricing" data-i18n="common.nav.pricing">Pricing</a><a href="/how-it-works" data-i18n="common.nav.how">How It Works</a><a href="/demo" data-i18n="common.nav.demo">Demo</a><a href="/faq" data-i18n="common.nav.faq">FAQ</a> <div class="nav-utility-corner locale-switcher-wrap" aria-label="Language selector"> <select id="locale-switcher" class="locale-switcher" data-locale-switcher aria-label="Choose language"></select> </div> <a class="button" href="/intake" data-i18n="common.buttons.startSetup">Start setup</a> </nav> </div> </header> <main>  <section class="section section-tight"> <div class="container"> <div class="page-hero"> <span class="eyebrow">Contact</span> <h1>Start setup or request a demo.</h1> <p>If you already know you want an AI Front Desk for WhatsApp or Telegram, send the intake here. If you need a walkthrough first, book a demo.</p> </div> </div> </section> <section class="section"> <div class="container"> <div class="form-shell"> <div class="form-card"> <span class="eyebrow">Start setup</span> <h2 style="margin: 0.7rem 0 0.8rem; letter-spacing: -0.04em;">Tell us how your front desk should work.</h2> <p class="muted">This intake captures the business facts, booking rules, escalation paths, and channel setup details needed to build a safe WhatsApp or Telegram front desk.</p> <p class="form-status" id="form-status" aria-live="polite"></p> <form action="https://formspree.io/f/mqeggyry" method="POST" id="lead-capture-form" data-webhook-url="https://hook.us2.make.com/tbxt5g0gajxdo311y53we6frqjmw5n6p" data-booking-url="https://calendly.com/operive/30min" data-deposit-url data-email-verification-url> <input type="hidden" name="_next" value="https://operive.com/request-received"> <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true"> <input type="hidden" name="form-name" value="ai-front-desk-intake"> <input type="hidden" name="landing-page"> <input type="hidden" name="referrer"> <input type="hidden" name="utm-source"> <input type="hidden" name="utm-medium"> <input type="hidden" name="utm-campaign"> <input type="hidden" name="zip-code"> <input type="hidden" name="city"> <input type="hidden" name="state"> <input type="hidden" name="country"> <input type="hidden" name="website-status" value=""> <input type="hidden" name="email-verified" value="false"> <div class="grid grid-2"> <label>
-Business name
-<input type="text" name="business-name" autocomplete="organization" required> </label> <label>
-Business type
-<select name="business-type" required> <option value="" selected disabled>Select one</option> <option value="Restaurant">Restaurant</option> <option value="Cafe">Cafe</option> <option value="Takeout / delivery">Takeout / delivery</option> <option value="Home services">Home services</option> <option value="HVAC">HVAC</option> <option value="Plumbing">Plumbing</option> <option value="Electrical">Electrical</option> <option value="Cleaning">Cleaning</option> <option value="Landscaping">Landscaping</option> <option value="Other">Other</option> </select> </label> <label>
-Primary contact name
-<input type="text" name="name" autocomplete="name" required> </label> <label>
-Work email
-<input type="email" name="work-email" autocomplete="email" inputmode="email" required> </label> <label>
-Phone
-<input type="tel" name="phone" autocomplete="tel" inputmode="tel" required> </label> <label>
-Zip Code
-<input type="text" name="zip-code-input" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" placeholder="5-digit ZIP" required> <span class="field-note">We’ll detect your city automatically.</span> </label> <div class="field full"> <span class="field-label">Do you have a website?</span> <div class="pill-row choice-row"> <label class="choice-pill"><input type="radio" name="website-status-choice" value="yes"> <span>Yes</span></label> <label class="choice-pill"><input type="radio" name="website-status-choice" value="no"> <span>No</span></label> </div> </div> <label class="full conditional-field is-hidden" data-conditional="website-yes">
-Website URL
-<input type="url" name="website" autocomplete="url" inputmode="url" placeholder="https://yourbusiness.com"> </label> <label>
-Preferred channel
-<select name="preferred-channel" required> <option value="" selected disabled>Select one</option> <option value="WhatsApp">WhatsApp</option> <option value="Telegram">Telegram</option> <option value="Both">Both</option> </select> </label> <label>
-Monthly inquiry volume
-<select name="monthly-inquiry-volume" required> <option value="" selected disabled>Select one</option> <option value="1-25">1-25</option> <option value="26-100">26-100</option> <option value="101-250">101-250</option> <option value="250+">250+</option> <option value="Unsure">Unsure</option> </select> </label> <label>
-Preferred start timeline
-<select name="timeline" required> <option value="" selected disabled>Select one</option> <option value="ASAP">ASAP</option> <option value="This month">This month</option> <option value="Next month">Next month</option> <option value="Just researching">Just researching</option> </select> </label> </div> <div class="location-confirmation is-hidden" id="location-confirmation" aria-live="polite"></div> <div class="email-verification-card is-hidden" id="email-verification-card"> <div> <strong>Verify email</strong> <p class="small muted" style="margin: 0.35rem 0 0;">Optional extra step for higher-quality setup requests.</p> </div> <button class="button-secondary" type="button" id="verify-email-button">Verify email</button> </div> <label>
-Business hours
-<textarea name="business-hours" rows="3" placeholder="List approved hours or say unknown" required></textarea> </label> <label>
-Services, menu categories, or common request types
-<textarea name="services-or-menu" rows="4" placeholder="Only approved facts"></textarea> </label> <label>
-Top FAQs the bot should answer
-<textarea name="top-faqs" rows="4" placeholder="Parking, service area, reservation policy, estimate process, etc."></textarea> </label> <label>
-Booking rules
-<textarea name="booking-rules" rows="4" placeholder="Explain how requests should be handled. If there is no live confirmation system, we will use request received language." required></textarea> </label> <label>
-Payment or deposit workflow
-<textarea name="payment-workflow" rows="3" placeholder="Do you collect deposits? Through which system? If unknown, say unknown."></textarea> </label> <label>
-Escalation rules
-<textarea name="escalation-rules" rows="4" placeholder="Who handles angry, refund, allergy, emergency, legal, medical, or safety-sensitive cases?" required></textarea> </label> <label>
-Links to policies, docs, menus, or service pages
-<textarea name="knowledge-base-links" rows="3" placeholder="Paste URLs to approved source material"></textarea> </label> <label>
-Anything we must not say or promise
-<textarea name="non-negotiables" rows="3" placeholder="Example: do not confirm bookings automatically; do not quote pricing; do not promise same-day service."></textarea> </label> <div class="grid grid-2"> <label>
-Do you want a Telegram demo before launch?
-<select name="telegram-demo" required> <option value="Yes">Yes</option> <option value="No">No</option> </select> </label> <label>
-Best next step
-<select name="best-next-step" required> <option value="Start setup">Start setup</option> <option value="I want to book a call">I want to book a call</option> <option value="Send deposit link">Send deposit link</option> </select> </label> </div> <button class="button" type="submit">Submit setup request</button> <p class="small muted">By submitting, you confirm the details above are approved business facts or marked unknown. Sensitive cases will be escalated to a human.</p> </form> </div> <aside class="contact-card"> <h3 style="margin-top: 0;">What happens next</h3> <ul class="check-list"> <li>Your intake is routed to Operive HQ.</li> <li>We review business fit, urgency, and channel readiness.</li> <li>We create an onboarding profile and draft your demo flow.</li> <li>If a deposit is required, we will send the approved payment step after review.</li> </ul> <div class="divider"></div> <h3>Guardrails</h3> <div class="pill-row"> <span class="pill">AI-assisted</span> <span class="pill">Human handoff</span> <span class="pill">No fake confirmations</span> <span class="pill">Escalate risk</span> </div> <div class="divider"></div> <p class="small muted">Prefer a live walkthrough? <a class="highlight" href="https://calendly.com/operive/30min" target="_blank" rel="noopener noreferrer">Book a demo</a>.</p> <p class="small muted">Prefer direct email? <a class="highlight" href="mailto:hello@operive.com">hello@operive.com</a>.</p> </aside> </div> <script>(function(){const formAction = "https://formspree.io/f/mqeggyry";
+    })();</script> <div class="site-shell"> <header class="site-header"> <div class="container nav-wrap"> <a class="brand" href="/" aria-label="Operive home"> <img class="brand-logo" src="/logo.svg" alt="Operive logo" width="320" height="72"> </a> <nav class="nav-links" aria-label="Primary"> <a href="/" data-i18n="common.nav.home">Home</a><a href="/restaurant-ai-front-desk" data-i18n="common.nav.restaurants">Restaurants</a><a href="/home-services-ai-intake" data-i18n="common.nav.homeServices">Home Services</a><a href="/pricing" data-i18n="common.nav.pricing">Pricing</a><a href="/how-it-works" data-i18n="common.nav.how">How It Works</a><a href="/demo" data-i18n="common.nav.demo">Demo</a><a href="/faq" data-i18n="common.nav.faq">FAQ</a> <div class="nav-utility-corner locale-switcher-wrap" aria-label="Language selector"> <select id="locale-switcher" class="locale-switcher" data-locale-switcher aria-label="Choose language"></select> </div> <a class="button" href="/intake" data-i18n="common.buttons.startSetup">Start setup</a> </nav> </div> </header> <main>  <section class="section section-tight"> <div class="container"> <div class="page-hero"> <span class="eyebrow">Contact</span> <h1>Start setup or request a demo.</h1> <p>If you already know you want an AI Front Desk for WhatsApp or Telegram, send the intake here. If you need a walkthrough first, book a demo.</p> </div> </div> </section> <section class="section"> <div class="container"> <div class="form-shell"> <div class="form-card"> <span class="eyebrow">Start setup</span> <h2 style="margin: 0.7rem 0 0.8rem; letter-spacing: -0.04em;">Tell us how your front desk should work.</h2> <p class="muted">This intake captures the business facts, booking rules, escalation paths, and channel setup details needed to build a safe WhatsApp or Telegram front desk.</p> <p class="form-status" id="form-status" aria-live="polite"></p> <form action="https://formspree.io/f/mqeggyry" method="POST" id="lead-capture-form" data-webhook-url="https://hook.us2.make.com/tbxt5g0gajxdo311y53we6frqjmw5n6p" data-booking-url="https://calendly.com/operive/30min" data-deposit-url data-email-verification-url> <input type="hidden" name="_next" value="https://operive.com/request-received"> <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="visually-hidden" aria-hidden="true"> <input type="hidden" name="form-name" value="ai-front-desk-intake"> <input type="hidden" name="landing-page"> <input type="hidden" name="referrer"> <input type="hidden" name="utm-source"> <input type="hidden" name="utm-medium"> <input type="hidden" name="utm-campaign"> <input type="hidden" name="zip-code"> <input type="hidden" name="city"> <input type="hidden" name="state"> <input type="hidden" name="country"> <input type="hidden" name="website-status" value=""> <input type="hidden" name="email-verified" value="false"> <div class="grid grid-2"> <label> Business name <input type="text" name="business-name" autocomplete="organization" required> </label> <label> Business type <select name="business-type" required> <option value="" selected disabled>Select one</option> <option value="Restaurant">Restaurant</option><option value="Cafe">Cafe</option><option value="Takeout / delivery">Takeout / delivery</option><option value="Home services">Home services</option><option value="HVAC">HVAC</option><option value="Plumbing">Plumbing</option><option value="Electrical">Electrical</option><option value="Cleaning">Cleaning</option><option value="Landscaping">Landscaping</option><option value="Other">Other</option> </select> </label> <label> Primary contact name <input type="text" name="name" autocomplete="name" required> </label> <label> Work email <input type="email" name="work-email" autocomplete="email" inputmode="email" required> </label> <label> Phone <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required> </label> <label> Zip Code <input type="text" name="zip-code-input" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}" placeholder="5-digit ZIP" required> <span class="field-note">We’ll detect your city automatically.</span> </label> <div class="field full"> <span class="field-label">Do you have a website?</span> <div class="pill-row choice-row"> <label class="choice-pill"><input type="radio" name="website-status-choice" value="yes"> <span>Yes</span></label> <label class="choice-pill"><input type="radio" name="website-status-choice" value="no"> <span>No</span></label> </div> </div> <label class="full conditional-field is-hidden" data-conditional="website-yes"> Website URL <input type="url" name="website" autocomplete="url" inputmode="url" placeholder="https://yourbusiness.com"> </label> <label> Preferred channel <select name="preferred-channel" required> <option value="" selected disabled>Select one</option> <option value="WhatsApp">WhatsApp</option><option value="Telegram">Telegram</option><option value="Both">Both</option> </select> </label> <label> Monthly inquiry volume <select name="monthly-inquiry-volume" required> <option value="" selected disabled>Select one</option> <option value="1-25">1-25</option><option value="26-100">26-100</option><option value="101-250">101-250</option><option value="250+">250+</option><option value="Unsure">Unsure</option> </select> </label> <label> Preferred start timeline <select name="timeline" required> <option value="" selected disabled>Select one</option> <option value="ASAP">ASAP</option><option value="This month">This month</option><option value="Next month">Next month</option><option value="Just researching">Just researching</option> </select> </label> </div> <div class="location-confirmation is-hidden" id="location-confirmation" aria-live="polite"></div> <div class="email-verification-card is-hidden" id="email-verification-card"> <div> <strong>Verify email</strong> <p class="small muted" style="margin: 0.35rem 0 0;">Optional extra step for higher-quality setup requests.</p> </div> <button class="button-secondary" type="button" id="verify-email-button">Verify email</button> </div> <label> Business hours <textarea name="business-hours" rows="3" placeholder="List approved hours or say unknown" required></textarea> </label> <label> Services, menu categories, or common request types <textarea name="services-or-menu" rows="4" placeholder="Only approved facts"></textarea> </label> <label> Top FAQs the bot should answer <textarea name="top-faqs" rows="4" placeholder="Parking, service area, reservation policy, estimate process, etc."></textarea> </label> <label> Booking rules <textarea name="booking-rules" rows="4" placeholder="Explain how requests should be handled. If there is no live confirmation system, we will use request received language." required></textarea> </label> <label> Payment or deposit workflow <textarea name="payment-workflow" rows="3" placeholder="Do you collect deposits? Through which system? If unknown, say unknown."></textarea> </label> <label> Escalation rules <textarea name="escalation-rules" rows="4" placeholder="Who handles angry, refund, allergy, emergency, legal, medical, or safety-sensitive cases?" required></textarea> </label> <label> Links to policies, docs, menus, or service pages <textarea name="knowledge-base-links" rows="3" placeholder="Paste URLs to approved source material"></textarea> </label> <label> Anything we must not say or promise <textarea name="non-negotiables" rows="3" placeholder="Example: do not confirm bookings automatically; do not quote pricing; do not promise same-day service."></textarea> </label> <div class="grid grid-2"> <label> Do you want a Telegram demo before launch? <select name="telegram-demo" required> <option value="Yes">Yes</option> <option value="No">No</option> </select> </label> <label> Best next step <select name="best-next-step" required> <option value="Start setup">Start setup</option> <option value="I want to book a call">I want to book a call</option> <option value="Send deposit link">Send deposit link</option> </select> </label> </div> <button class="button" type="submit">Submit setup request</button> <p class="small muted">By submitting, you confirm the details above are approved business facts or marked unknown. Sensitive cases will be escalated to a human.</p> </form> </div> <aside class="contact-card"> <h3 style="margin-top: 0;">What happens next</h3> <ul class="check-list"> <li>Your intake is routed to Operive HQ.</li><li>We review business fit, urgency, and channel readiness.</li><li>We create an onboarding profile and draft your demo flow.</li><li>If a deposit is required, we will send the approved payment step after review.</li> </ul> <div class="divider"></div> <h3>Guardrails</h3> <div class="pill-row"> <span class="pill">AI-assisted</span><span class="pill">Human handoff</span><span class="pill">No fake confirmations</span><span class="pill">Escalate risk</span> </div> <div class="divider"></div> <p class="small muted">Prefer a live walkthrough? <a class="highlight" href="https://calendly.com/operive/30min" target="_blank" rel="noopener noreferrer">Book a demo</a>.</p> <p class="small muted">Prefer direct email? <a class="highlight" href="mailto:hello@operive.com">hello@operive.com</a>.</p> </aside> </div> <script>(function(){const formAction = "https://formspree.io/f/mqeggyry";
 const bookingUrl = "https://calendly.com/operive/30min";
 const webhookUrl = "https://hook.us2.make.com/tbxt5g0gajxdo311y53we6frqjmw5n6p";
 const depositUrl = "";
 const requestReceivedUrl = "https://operive.com/request-received";
 const zipLookupUrl = "";
 const emailVerificationUrl = "";
+const scriptLocale = "en";
+const ui = {"fieldFallback":"This field","workEmailRequired":"Work email is required.","validEmail":"Enter a valid email address.","validEmailDomain":"Enter a valid email domain.","realBusinessEmail":"Please use a real business email address.","validZip":"Enter a valid 5-digit ZIP code.","validWebsite":"Enter a valid website URL, including https://","sending":"Sending…","submit":"Submit setup request","checkingZip":"Checking ZIP code…","zipUnknown":"We could not confirm that ZIP code yet. You can still submit and we will review it manually.","detected":"detected_en","sendingVerification":"Sending verification…","emailVerified":"Email verified. You can submit now.","verificationUnavailable":"Verification is unavailable right now. You can still submit if your email is valid.","needsWebsiteStatus":"Please tell us whether you already have a website.","reviewFieldsOne":"Please review the highlighted field and try again.","reviewFieldsMany":"Please review the highlighted fields and try again.","sendingRequest":"Sending your setup request…","nextStep":"Thanks — sending you to the next step…","backup":"Secure handoff failed, so we are sending your request through the backup form now.","requiredSuffix":"is required."};
 
   const leadCaptureForm = document.querySelector('#lead-capture-form');
 
@@ -225,54 +187,8 @@ const emailVerificationUrl = "";
     const savedLocale = (() => {
       try { return window.localStorage.getItem('operive-locale') || ''; } catch { return ''; }
     })();
-    const currentLocale = [params.get('lang'), savedLocale, document.documentElement.lang].find((value) => String(value || '').toLowerCase().startsWith('ar')) ? 'ar' : 'en';
-    const ui = currentLocale === 'ar'
-      ? {
-          fieldFallback: 'هذا الحقل',
-          workEmailRequired: 'البريد الإلكتروني للعمل مطلوب.',
-          validEmail: 'أدخل بريدًا إلكترونيًا صحيحًا.',
-          validEmailDomain: 'أدخل نطاق بريد إلكتروني صحيحًا.',
-          realBusinessEmail: 'يرجى استخدام بريد العمل الحقيقي.',
-          validZip: 'أدخل رمزًا بريديًا صحيحًا من 5 أرقام.',
-          validWebsite: 'أدخل رابط موقع صحيحًا، بما في ذلك https://',
-          sending: 'جارٍ الإرسال…',
-          submit: 'أرسل طلب الإعداد',
-          checkingZip: 'جارٍ التحقق من الرمز البريدي…',
-          zipUnknown: 'لم نتمكن من تأكيد هذا الرمز البريدي بعد. لا يزال بإمكانك الإرسال وسنراجعه يدويًا.',
-          detected: (city, state, country) => `تم التعرف على ${city}${state ? `، ${state}` : ''}${country ? `، ${country}` : ''}.`,
-          sendingVerification: 'جارٍ إرسال التحقق…',
-          emailVerified: 'تم التحقق من البريد الإلكتروني. يمكنك الإرسال الآن.',
-          verificationUnavailable: 'التحقق غير متاح الآن. لا يزال بإمكانك الإرسال إذا كان بريدك صحيحًا.',
-          needsWebsiteStatus: 'يرجى إخبارنا ما إذا كان لديك موقع إلكتروني بالفعل.',
-          reviewFields: (n) => `يرجى مراجعة ${n === 1 ? 'الحقل المحدد' : `${n} حقول محددة`} ثم المحاولة مرة أخرى.`,
-          sendingRequest: 'جارٍ إرسال طلب الإعداد…',
-          nextStep: 'شكرًا — يتم الآن نقلك إلى الخطوة التالية…',
-          backup: 'فشل التحويل الآمن، لذا سنرسل طلبك الآن عبر النموذج الاحتياطي.',
-          required: (label) => `${label} مطلوب.`,
-        }
-      : {
-          fieldFallback: 'This field',
-          workEmailRequired: 'Work email is required.',
-          validEmail: 'Enter a valid email address.',
-          validEmailDomain: 'Enter a valid email domain.',
-          realBusinessEmail: 'Please use a real business email address.',
-          validZip: 'Enter a valid 5-digit ZIP code.',
-          validWebsite: 'Enter a valid website URL, including https://',
-          sending: 'Sending…',
-          submit: 'Submit setup request',
-          checkingZip: 'Checking ZIP code…',
-          zipUnknown: 'We could not confirm that ZIP code yet. You can still submit and we will review it manually.',
-          detected: (city, state, country) => `Detected ${city}${state ? `, ${state}` : ''}${country ? `, ${country}` : ''}.`,
-          sendingVerification: 'Sending verification…',
-          emailVerified: 'Email verified. You can submit now.',
-          verificationUnavailable: 'Verification is unavailable right now. You can still submit if your email is valid.',
-          needsWebsiteStatus: 'Please tell us whether you already have a website.',
-          reviewFields: (n) => `Please review ${n === 1 ? 'the highlighted field' : `the ${n} highlighted fields`} and try again.`,
-          sendingRequest: 'Sending your setup request…',
-          nextStep: 'Thanks — sending you to the next step…',
-          backup: 'Secure handoff failed, so we are sending your request through the backup form now.',
-          required: (label) => `${label} is required.`,
-        };
+    const localeHint = [params.get('lang'), savedLocale, document.documentElement.lang, scriptLocale].find(Boolean) || 'en';
+    const currentLocale = String(localeHint).toLowerCase().startsWith('ar') ? 'ar' : String(localeHint).toLowerCase().startsWith('es') ? 'es' : 'en';
     const disposableEmailDomains = new Set([
       '10minutemail.com', 'mailinator.com', 'guerrillamail.com', 'tempmail.com', 'yopmail.com', 'trashmail.com', 'sharklasers.com', 'getnada.com', 'dispostable.com', 'maildrop.cc'
     ]);
@@ -353,20 +269,16 @@ const emailVerificationUrl = "";
       if (!data) return null;
       if (data.places?.[0]) {
         const place = data.places[0];
-        return {
-          city: place['place name'] || '',
-          state: place['state abbreviation'] || place.state || '',
-          country: data.country || '',
-        };
+        return { city: place['place name'] || '', state: place['state abbreviation'] || place.state || '', country: data.country || '' };
       }
-      if (data.city || data.state || data.country) {
-        return {
-          city: data.city || '',
-          state: data.state || '',
-          country: data.country || '',
-        };
-      }
+      if (data.city || data.state || data.country) return { city: data.city || '', state: data.state || '', country: data.country || '' };
       return null;
+    };
+
+    const formatDetected = (city, state, country) => {
+      if (currentLocale === 'ar') return `تم التعرف على ${city}${state ? `، ${state}` : ''}${country ? `، ${country}` : ''}.`;
+      if (currentLocale === 'es') return `Detectado: ${city}${state ? `, ${state}` : ''}${country ? `, ${country}` : ''}.`;
+      return `Detected ${city}${state ? `, ${state}` : ''}${country ? `, ${country}` : ''}.`;
     };
 
     const lookupZip = async (zip) => {
@@ -375,7 +287,6 @@ const emailVerificationUrl = "";
       const candidates = [];
       if (zipLookupUrl) candidates.push(`${zipLookupUrl.replace(/\/$/, '')}/${cleanZip}`);
       candidates.push(`https://api.zippopotam.us/us/${cleanZip}`);
-
       for (const url of candidates) {
         try {
           const response = await fetch(url, { headers: { Accept: 'application/json' } });
@@ -414,16 +325,14 @@ const emailVerificationUrl = "";
         emailVerificationState.verified = false;
         if (emailVerifiedInput) emailVerifiedInput.value = 'false';
       }
-      if (emailVerificationCard) {
-        emailVerificationCard.classList.toggle('is-hidden', !(emailVerificationServiceUrl && valid));
-      }
+      if (emailVerificationCard) emailVerificationCard.classList.toggle('is-hidden', !(emailVerificationServiceUrl && valid));
     };
 
     const validateField = (field) => {
       const value = typeof field.value === 'string' ? field.value.trim() : field.value;
       const label = getFieldLabel(field);
       let message = '';
-      if (field.required && !value) message = ui.required(label);
+      if (field.required && !value) message = `${label} ${ui.requiredSuffix}`;
       else if (field.name === 'work-email' && value) message = validateEmailAddress(value);
       else if (field.name === 'zip-code-input' && value && normalizeZip(value).length !== 5) message = ui.validZip;
       else if (field.type === 'url' && value && !field.validity.valid) message = ui.validWebsite;
@@ -438,60 +347,19 @@ const emailVerificationUrl = "";
       return '';
     };
 
-    const validateForm = () => {
-      const fields = Array.from(leadCaptureForm.querySelectorAll('input, select, textarea'))
-        .filter((field) => field.type !== 'hidden' && field.type !== 'submit');
-      return fields.filter((field) => Boolean(validateField(field)));
-    };
+    const validateForm = () => Array.from(leadCaptureForm.querySelectorAll('input, select, textarea')).filter((field) => field.type !== 'hidden' && field.type !== 'submit').filter((field) => Boolean(validateField(field)));
 
     const buildPayload = (formData, bookingRequested) => ({
-      source: 'operive-ai-front-desk-intake',
-      bookingRequested,
-      businessName: formData.get('business-name') || '',
-      businessType: formData.get('business-type') || '',
-      name: formData.get('name') || '',
-      email: formData.get('work-email') || '',
-      emailVerified: String(formData.get('email-verified') || 'false') === 'true',
-      phone: formData.get('phone') || '',
-      website: formData.get('website') || '',
-      websiteStatus: formData.get('website-status') || '',
-      websiteInterest: formData.get('website-interest') || '',
-      zipCode: formData.get('zip-code') || '',
-      city: formData.get('city') || '',
-      state: formData.get('state') || '',
-      country: formData.get('country') || '',
-      preferredChannel: formData.get('preferred-channel') || '',
-      monthlyInquiryVolume: formData.get('monthly-inquiry-volume') || '',
-      timeline: formData.get('timeline') || '',
-      businessHours: formData.get('business-hours') || '',
-      servicesOrMenu: formData.get('services-or-menu') || '',
-      topFaqs: formData.get('top-faqs') || '',
-      bookingRules: formData.get('booking-rules') || '',
-      paymentWorkflow: formData.get('payment-workflow') || '',
-      escalationRules: formData.get('escalation-rules') || '',
-      knowledgeBaseLinks: formData.get('knowledge-base-links') || '',
-      nonNegotiables: formData.get('non-negotiables') || '',
-      telegramDemo: formData.get('telegram-demo') || '',
-      bestNextStep: formData.get('best-next-step') || '',
-      landingPage: formData.get('landing-page') || '',
-      referrer: formData.get('referrer') || '',
-      utmSource: formData.get('utm-source') || '',
-      utmMedium: formData.get('utm-medium') || '',
-      utmCampaign: formData.get('utm-campaign') || '',
+      source: 'operive-ai-front-desk-intake', bookingRequested,
+      businessName: formData.get('business-name') || '', businessType: formData.get('business-type') || '', name: formData.get('name') || '', email: formData.get('work-email') || '', emailVerified: String(formData.get('email-verified') || 'false') === 'true', phone: formData.get('phone') || '', website: formData.get('website') || '', websiteStatus: formData.get('website-status') || '', websiteInterest: formData.get('website-interest') || '', zipCode: formData.get('zip-code') || '', city: formData.get('city') || '', state: formData.get('state') || '', country: formData.get('country') || '', preferredChannel: formData.get('preferred-channel') || '', monthlyInquiryVolume: formData.get('monthly-inquiry-volume') || '', timeline: formData.get('timeline') || '', businessHours: formData.get('business-hours') || '', servicesOrMenu: formData.get('services-or-menu') || '', topFaqs: formData.get('top-faqs') || '', bookingRules: formData.get('booking-rules') || '', paymentWorkflow: formData.get('payment-workflow') || '', escalationRules: formData.get('escalation-rules') || '', knowledgeBaseLinks: formData.get('knowledge-base-links') || '', nonNegotiables: formData.get('non-negotiables') || '', telegramDemo: formData.get('telegram-demo') || '', bestNextStep: formData.get('best-next-step') || '', landingPage: formData.get('landing-page') || '', referrer: formData.get('referrer') || '', utmSource: formData.get('utm-source') || '', utmMedium: formData.get('utm-medium') || '', utmCampaign: formData.get('utm-campaign') || '',
     });
 
     const submitWebhook = async (payload) => {
       if (!webhookUrl) return false;
       try {
-        const response = await fetch(webhookUrl, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
+        const response = await fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
         return response.ok;
-      } catch {
-        return false;
-      }
+      } catch { return false; }
     };
 
     const disableButton = () => {
@@ -514,25 +382,16 @@ const emailVerificationUrl = "";
     setValue('utm-medium', params.get('utm_medium') || '');
     setValue('utm-campaign', params.get('utm_campaign') || '');
 
-    leadCaptureForm.querySelectorAll('[name="website-status-choice"]').forEach((field) => {
-      field.addEventListener('change', () => {
-        syncWebsiteState();
-        setStatus('');
-      });
-    });
+    leadCaptureForm.querySelectorAll('[name="website-status-choice"]').forEach((field) => field.addEventListener('change', () => { syncWebsiteState(); setStatus(''); }));
 
     if (zipInput) {
       zipInput.addEventListener('input', () => {
         zipInput.value = normalizeZip(zipInput.value);
         setValue('zip-code', zipInput.value);
         if (zipInput.value.length < 5) {
-          setValue('city', '');
-          setValue('state', '');
-          setValue('country', '');
-          setLocationConfirmation('');
+          setValue('city', ''); setValue('state', ''); setValue('country', ''); setLocationConfirmation('');
         }
       });
-
       zipInput.addEventListener('blur', async () => {
         const zip = normalizeZip(zipInput.value);
         setValue('zip-code', zip);
@@ -540,16 +399,11 @@ const emailVerificationUrl = "";
         setLocationConfirmation(ui.checkingZip, 'progress');
         const location = await lookupZip(zip);
         if (!location) {
-          setValue('city', '');
-          setValue('state', '');
-          setValue('country', '');
-          setLocationConfirmation(ui.zipUnknown, 'warning');
+          setValue('city', ''); setValue('state', ''); setValue('country', ''); setLocationConfirmation(ui.zipUnknown, 'warning');
           return;
         }
-        setValue('city', location.city);
-        setValue('state', location.state);
-        setValue('country', location.country || 'United States');
-        setLocationConfirmation(ui.detected(location.city, location.state, location.country), 'success');
+        setValue('city', location.city); setValue('state', location.state); setValue('country', location.country || 'United States');
+        setLocationConfirmation(formatDetected(location.city, location.state, location.country), 'success');
       });
     }
 
@@ -562,29 +416,18 @@ const emailVerificationUrl = "";
       verifyEmailButton.addEventListener('click', async () => {
         const email = String(emailInput?.value || '').trim().toLowerCase();
         const emailError = validateEmailAddress(email);
-        if (emailError) {
-          setStatus(emailError, 'error');
-          emailInput?.focus();
-          return;
-        }
+        if (emailError) { setStatus(emailError, 'error'); emailInput?.focus(); return; }
         verifyEmailButton.setAttribute('disabled', 'true');
         setStatus(ui.sendingVerification, 'progress');
         try {
-          const response = await fetch(emailVerificationServiceUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, source: 'operive-ai-front-desk-intake' }),
-          });
+          const response = await fetch(emailVerificationServiceUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: 'operive-ai-front-desk-intake' }) });
           if (!response.ok) throw new Error('verification_failed');
           emailVerificationState.verified = true;
           emailVerificationState.pendingAddress = email;
           if (emailVerifiedInput) emailVerifiedInput.value = 'true';
           setStatus(ui.emailVerified, 'progress');
-        } catch {
-          setStatus(ui.verificationUnavailable, 'error');
-        } finally {
-          verifyEmailButton.removeAttribute('disabled');
-        }
+        } catch { setStatus(ui.verificationUnavailable, 'error'); }
+        finally { verifyEmailButton.removeAttribute('disabled'); }
       });
     }
 
@@ -593,17 +436,10 @@ const emailVerificationUrl = "";
 
     leadCaptureForm.querySelectorAll('input, select, textarea').forEach((field) => {
       if (field.type === 'hidden' || field.type === 'submit') return;
-      const revalidate = () => {
-        validateField(field);
-        if (!leadCaptureForm.querySelector('[aria-invalid="true"]')) setStatus('');
-      };
+      const revalidate = () => { validateField(field); if (!leadCaptureForm.querySelector('[aria-invalid="true"]')) setStatus(''); };
       field.addEventListener('blur', revalidate);
-      field.addEventListener('input', () => {
-        if (field.getAttribute('aria-invalid') === 'true') revalidate();
-      });
-      field.addEventListener('change', () => {
-        if (field.getAttribute('aria-invalid') === 'true') revalidate();
-      });
+      field.addEventListener('input', () => { if (field.getAttribute('aria-invalid') === 'true') revalidate(); });
+      field.addEventListener('change', () => { if (field.getAttribute('aria-invalid') === 'true') revalidate(); });
     });
 
     leadCaptureForm.addEventListener('submit', async (event) => {
@@ -611,55 +447,29 @@ const emailVerificationUrl = "";
       syncWebsiteState();
       const invalidFields = validateForm();
       const websiteStatus = leadCaptureForm.querySelector('[name="website-status-choice"]:checked')?.value || '';
-
-      if (!websiteStatus) {
-        setStatus(ui.needsWebsiteStatus, 'error');
-        leadCaptureForm.querySelector('[name="website-status-choice"]')?.focus();
-        return;
-      }
-
-      if (invalidFields.length) {
-        setStatus(ui.reviewFields(invalidFields.length), 'error');
-        invalidFields[0].focus();
-        return;
-      }
-
+      if (!websiteStatus) { setStatus(ui.needsWebsiteStatus, 'error'); leadCaptureForm.querySelector('[name="website-status-choice"]')?.focus(); return; }
+      if (invalidFields.length) { setStatus(invalidFields.length === 1 ? ui.reviewFieldsOne : ui.reviewFieldsMany, 'error'); invalidFields[0].focus(); return; }
       if (zipInput) {
         const zip = normalizeZip(zipInput.value);
         setValue('zip-code', zip);
         if (zip.length === 5 && !leadCaptureForm.querySelector('[name="city"]')?.value) {
           const location = await lookupZip(zip);
           if (location) {
-            setValue('city', location.city);
-            setValue('state', location.state);
-            setValue('country', location.country || 'United States');
-            setLocationConfirmation(ui.detected(location.city, location.state, location.country), 'success');
+            setValue('city', location.city); setValue('state', location.state); setValue('country', location.country || 'United States');
+            setLocationConfirmation(formatDetected(location.city, location.state, location.country), 'success');
           }
         }
       }
-
       disableButton();
       setStatus(ui.sendingRequest, 'progress');
-
       const formData = new FormData(leadCaptureForm);
       const bookingRequested = formData.get('best-next-step') === 'I want to book a call' || ['ASAP', 'This month'].includes(String(formData.get('timeline')));
       const payload = buildPayload(formData, bookingRequested);
       const desiredNextStep = String(formData.get('best-next-step') || '');
-      const nextUrl = desiredNextStep === 'Send deposit link' && depositUrl
-        ? depositUrl
-        : bookingRequested
-          ? bookingUrl
-          : requestReceivedUrl;
-
+      const nextUrl = desiredNextStep === 'Send deposit link' && depositUrl ? depositUrl : bookingRequested ? bookingUrl : requestReceivedUrl;
       if (nextField) nextField.value = nextUrl;
-
       const webhookDelivered = await submitWebhook(payload);
-      if (webhookDelivered) {
-        setStatus(ui.nextStep, 'progress');
-        window.location.href = nextUrl;
-        return;
-      }
-
+      if (webhookDelivered) { setStatus(ui.nextStep, 'progress'); window.location.href = nextUrl; return; }
       setStatus(ui.backup, 'progress');
       enableButton();
       HTMLFormElement.prototype.submit.call(leadCaptureForm);
