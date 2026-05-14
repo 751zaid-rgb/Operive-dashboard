@@ -376,6 +376,35 @@ const ui = {"fieldFallback":"Este campo","workEmailRequired":"El correo de traba
       button.textContent = ui.submit;
     };
 
+    const buildCalendlyPrefillUrl = (payload) => {
+      if (!bookingUrl) return '';
+      const calendlyUrl = new URL(bookingUrl, window.location.href);
+      const setParam = (key, value) => {
+        const cleanValue = String(value || '').trim();
+        if (cleanValue) calendlyUrl.searchParams.set(key, cleanValue);
+      };
+      const localeLabels = {
+        ar: { frontDesk: 'استقبال ذكي', timeline: 'الجدول الزمني', requests: 'الطلبات', faqs: 'الأسئلة الشائعة', booking: 'الحجز', values: { 'Restaurant': 'مطعم', 'Cafe': 'مقهى', 'Takeout / delivery': 'طلبات خارجية / توصيل', 'Home services': 'خدمات منزلية', 'HVAC': 'تكييف وتدفئة', 'Plumbing': 'سباكة', 'Electrical': 'كهرباء', 'Cleaning': 'تنظيف', 'Landscaping': 'تنسيق حدائق', 'Other': 'أخرى', 'WhatsApp': 'واتساب', 'Telegram': 'تلغرام', 'Both': 'واتساب وتلغرام', 'ASAP': 'بأسرع وقت', 'This month': 'هذا الشهر', 'Next month': 'الشهر القادم', 'Just researching': 'أبحث فقط' } },
+        es: { frontDesk: 'recepción IA', timeline: 'Plazo', requests: 'Solicitudes', faqs: 'Preguntas frecuentes', booking: 'Reservas', values: { 'Restaurant': 'Restaurante', 'Cafe': 'Cafetería', 'Takeout / delivery': 'Comida para llevar / entrega', 'Home services': 'Servicios para el hogar', 'HVAC': 'Climatización', 'Plumbing': 'Plomería', 'Electrical': 'Electricidad', 'Cleaning': 'Limpieza', 'Landscaping': 'Jardinería', 'Other': 'Otro', 'WhatsApp': 'WhatsApp', 'Telegram': 'Telegram', 'Both': 'WhatsApp y Telegram', 'ASAP': 'Lo antes posible', 'This month': 'Este mes', 'Next month': 'El próximo mes', 'Just researching': 'Solo investigando' } },
+        en: { frontDesk: 'front desk', timeline: 'Timeline', requests: 'Requests', faqs: 'FAQs', booking: 'Booking', values: {} },
+      };
+      const labels = localeLabels[currentLocale] || localeLabels.en;
+      const localizeValue = (value) => labels.values[value] || value || '';
+      const mainGoal = [
+        payload.preferredChannel ? `${localizeValue(payload.preferredChannel)} ${labels.frontDesk}` : '',
+        localizeValue(payload.businessType),
+        payload.timeline ? `${labels.timeline}: ${localizeValue(payload.timeline)}` : '',
+        payload.servicesOrMenu ? `${labels.requests}: ${payload.servicesOrMenu}` : '',
+        payload.topFaqs ? `${labels.faqs}: ${payload.topFaqs}` : '',
+        payload.bookingRules ? `${labels.booking}: ${payload.bookingRules}` : '',
+      ].filter(Boolean).join(' | ');
+      setParam('name', payload.name);
+      setParam('email', payload.email);
+      setParam('a1', payload.businessName);
+      setParam('a2', mainGoal.slice(0, 900));
+      return calendlyUrl.toString();
+    };
+
     setValue('landing-page', window.location.href);
     setValue('referrer', document.referrer || 'direct');
     setValue('utm-source', params.get('utm_source') || '');
@@ -466,7 +495,8 @@ const ui = {"fieldFallback":"Este campo","workEmailRequired":"El correo de traba
       const bookingRequested = formData.get('best-next-step') === 'I want to book a call' || ['ASAP', 'This month'].includes(String(formData.get('timeline')));
       const payload = buildPayload(formData, bookingRequested);
       const desiredNextStep = String(formData.get('best-next-step') || '');
-      const nextUrl = desiredNextStep === 'Send deposit link' && depositUrl ? depositUrl : bookingRequested ? bookingUrl : requestReceivedUrl;
+      const prefilledBookingUrl = bookingRequested ? buildCalendlyPrefillUrl(payload) : '';
+      const nextUrl = desiredNextStep === 'Send deposit link' && depositUrl ? depositUrl : bookingRequested ? prefilledBookingUrl : requestReceivedUrl;
       if (nextField) nextField.value = nextUrl;
       const webhookDelivered = await submitWebhook(payload);
       if (webhookDelivered) { setStatus(ui.nextStep, 'progress'); window.location.href = nextUrl; return; }
