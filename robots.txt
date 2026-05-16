@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://operive.com/sitemap-index.xml
+Sitemap: https://www.operive.com/sitemap-index.xml
