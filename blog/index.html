@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | Operive</title>
+    <meta name="description" content="Operive articles on AI front desk systems, speed-to-lead, inbound capture, safe handoff, and practical automation for service businesses.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.operive.com/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Operive">
+    <meta property="og:title" content="Blog | Operive">
+    <meta property="og:description" content="Operational essays for businesses that want faster lead response, cleaner intake, and practical AI front desk systems.">
+    <meta property="og:url" content="https://www.operive.com/blog/">
+    <meta property="og:image" content="https://www.operive.com/og-card.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | Operive">
+    <meta name="twitter:description" content="Operational essays for faster lead response, cleaner intake, and practical AI front desk systems.">
+    <meta name="twitter:image" content="https://www.operive.com/og-card.svg">
+    <meta name="theme-color" content="#335cff">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+      body {
+        background:
+          radial-gradient(circle at top left, rgba(51, 92, 255, 0.14), transparent 34rem),
+          linear-gradient(180deg, #f8faff 0%, #eef2fb 52%, #f7f8fb 100%);
+      }
+
+      .blog-hub-hero {
+        padding: clamp(5rem, 9vw, 8rem) 0 clamp(2.5rem, 6vw, 4.5rem);
+        color: #ffffff;
+        background:
+          radial-gradient(circle at 80% 12%, rgba(51, 92, 255, 0.42), transparent 30rem),
+          linear-gradient(135deg, #081020, #142247 54%, #081020);
+      }
+
+      .blog-hub-hero h1 {
+        max-width: 10ch;
+        margin: 1rem 0;
+        color: #ffffff;
+        font-size: clamp(3rem, 7vw, 6rem);
+      }
+
+      .blog-hub-hero .subtitle {
+        color: rgba(255, 255, 255, 0.76);
+      }
+
+      .blog-hub-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: end;
+      }
+
+      .featured-article-section {
+        padding: clamp(3.5rem, 7vw, 6rem) 0;
+      }
+
+      .featured-article-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.82fr);
+        gap: clamp(1.5rem, 4vw, 3rem);
+        align-items: stretch;
+        overflow: hidden;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 28px;
+        background: #ffffff;
+        box-shadow: 0 24px 80px rgba(17, 24, 39, 0.12);
+      }
+
+      .featured-article-copy {
+        padding: clamp(1.6rem, 4vw, 3rem);
+      }
+
+      .featured-article-copy h2 {
+        max-width: 12ch;
+        margin-top: 0.85rem;
+        font-size: clamp(2.1rem, 5vw, 4.35rem);
+      }
+
+      .featured-article-copy p {
+        max-width: 62ch;
+        color: #47536a;
+        font-size: var(--text-lg);
+      }
+
+      .article-meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin: 1rem 0 1.4rem;
+        color: #667085;
+        font-size: var(--text-sm);
+        font-weight: 700;
+      }
+
+      .article-meta-row span + span::before {
+        content: "/";
+        margin-right: 0.55rem;
+        color: #a4adbd;
+      }
+
+      .article-visual {
+        min-height: 100%;
+        padding: 1rem;
+        background:
+          radial-gradient(circle at 74% 20%, rgba(51, 92, 255, 0.34), transparent 24rem),
+          linear-gradient(135deg, #0a1020, #152443);
+      }
+
+      .article-visual video {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        border-radius: 20px;
+        background: #030712;
+        object-fit: cover;
+      }
+
+      .blog-cta {
+        margin-bottom: clamp(3rem, 7vw, 6rem);
+        padding: clamp(2rem, 5vw, 4rem);
+        border-radius: 30px;
+        color: #ffffff;
+        background:
+          radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 24rem),
+          linear-gradient(135deg, #07111f, #1639bf 58%, #0f766e);
+        box-shadow: 0 28px 90px rgba(17, 24, 39, 0.24);
+      }
+
+      .blog-cta h2,
+      .blog-cta p {
+        color: #ffffff;
+      }
+
+      .blog-cta p {
+        max-width: 680px;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .blog-cta .button-secondary {
+        border-color: rgba(255, 255, 255, 0.18);
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+      }
+
+      @media (max-width: 900px) {
+        .blog-hub-grid,
+        .featured-article-card {
+          grid-template-columns: 1fr;
+        }
+
+        .article-visual video {
+          min-height: auto;
+          aspect-ratio: 16 / 9;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "Operive Blog",
+        "url": "https://www.operive.com/blog/",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Operive",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.operive.com/logo.svg"
+          }
+        },
+        "blogPost": [
+          {
+            "@type": "BlogPosting",
+            "headline": "Why Businesses Lose 50% of Leads in the First 5 Minutes",
+            "url": "https://www.operive.com/blog/why-businesses-lose-leads/",
+            "datePublished": "2026-05-24",
+            "author": {
+              "@type": "Person",
+              "name": "Noah Adam"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="container navbar">
+        <a class="brand" href="/" aria-label="Operive home">
+          <span class="brand-mark" aria-hidden="true">O</span>
+          <span>Operive</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/">Home</a>
+          <a href="/restaurant-ai-front-desk">Restaurants</a>
+          <a href="/home-services-ai-intake">Home Services</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/how-it-works">How It Works</a>
+          <a href="/demo">Demo</a>
+          <a href="/faq">FAQ</a>
+          <a href="/blog" aria-current="page">Blog</a>
+        </nav>
+        <div class="nav-cta">
+          <a class="button button-secondary" href="/login">Login</a>
+          <a class="button button-primary" href="/intake">Start setup</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="blog-hub-hero">
+        <div class="container blog-hub-grid">
+          <div>
+            <span class="eyebrow">Operive Blog</span>
+            <h1>Operational essays for faster inbound growth.</h1>
+            <p class="subtitle">Sharp, practical thinking on speed-to-lead, AI front desk systems, workflow design, safe escalation, and the hidden operations layer behind conversion.</p>
+          </div>
+          <div class="card">
+            <span class="eyebrow">Current focus</span>
+            <h2 style="font-size: clamp(1.45rem, 3vw, 2rem); margin-top: 0.8rem;">Lead response is the first workflow worth fixing.</h2>
+            <p class="muted">Most businesses do not need more dashboards. They need fewer orphaned opportunities.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-article-section">
+        <div class="container">
+          <article class="featured-article-card">
+            <div class="featured-article-copy">
+              <span class="eyebrow">Featured article</span>
+              <h2>Why Businesses Lose 50% of Leads in the First 5 Minutes</h2>
+              <div class="article-meta-row">
+                <span>Noah Adam</span>
+                <span>May 24, 2026</span>
+                <span>Speed-to-lead</span>
+              </div>
+              <p>A B2B breakdown of the 300-second intent window, why slow follow-up turns warm demand cold, and how closed-loop AI sub-agents can engage, qualify, book, and escalate inbound opportunities instantly.</p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="/blog/why-businesses-lose-leads/">Read article</a>
+                <a class="button button-secondary" href="/intake">Map your workflow</a>
+              </div>
+            </div>
+            <div class="article-visual" aria-label="Operive promotional video preview">
+              <video controls playsinline preload="metadata" poster="/og-card.svg">
+                <source src="/assets/media/operive-30s-promo.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="container">
+        <div class="blog-cta">
+          <span class="eyebrow" style="background: rgba(255,255,255,0.14); color: #ffffff;">Turn reading into workflow clarity</span>
+          <h2>Map the intake layer before more demand leaks out of it.</h2>
+          <p>Operive helps service businesses design AI front desk systems that respond instantly, qualify cleanly, and route sensitive cases safely.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/intake">Map your workflow</a>
+            <a class="button button-secondary" href="https://calendly.com/operive/30min" target="_blank" rel="noopener noreferrer">Launch a system audit</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <a class="brand" href="/" aria-label="Operive home" style="margin-bottom: 0.85rem;">
+            <span class="brand-mark" aria-hidden="true">O</span>
+            <span>Operive</span>
+          </a>
+          <p>AI Front Desk for restaurants and home services on WhatsApp and Telegram. Built to capture leads, answer common questions, and hand off sensitive cases safely.</p>
+          <p class="legal-copy">AI-assisted, human handoff. No fake booking confirmations. No invented business facts.</p>
+        </div>
+        <div>
+          <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/restaurant-ai-front-desk">Restaurants</a>
+            <a href="/home-services-ai-intake">Home Services</a>
+            <a href="/pricing">Pricing</a>
+            <a href="/how-it-works">How It Works</a>
+            <a href="/demo">Demo</a>
+            <a href="/faq">FAQ</a>
+          <a href="/blog" aria-current="page">Blog</a>
+            <a href="/intake">Start Setup</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms</a>
+          </div>
+          <p class="legal-copy">hello@operive.com</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
