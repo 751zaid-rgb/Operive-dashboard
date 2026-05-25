@@ -168,3 +168,21 @@ body.phase2-design ::selection {
 .home-phase2 .section {
   padding-block: var(--section-pad);
 }
+
+.home-phase2 .section:not(.dark-band) > .container > .section-header h1,
+.home-phase2 .section:not(.dark-band) > .container > .section-header h2 {
+  color: hsl(222, 45%, 11%);
+}
+
+.home-phase2 .section:not(.dark-band) > .container > .section-header p {
+  color: hsl(221, 17%, 36%);
+}
+
+.home-phase2 .dark-band > .container > .section-header h1,
+.home-phase2 .dark-band > .container > .section-header h2 {
+  color: var(--text-primary);
+}
+
+.home-phase2 .dark-band > .container > .section-header p {
+  color: var(--text-secondary);
+}
