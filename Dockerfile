@@ -1,14 +1,9 @@
-# Use a lightweight Nginx image to serve static content
+# Use a lightweight Nginx image
 FROM nginx:alpine
 
 # Copy your static website files into the Nginx public directory
 COPY . /usr/share/nginx/html
 
-# Expose port 8080 (Cloud Run's default port)
-EXPOSE 8080
-
-# Configure Nginx to listen on port 8080 instead of the default 80
-RUN sed -i 's/listen\. \+80;/listen 8080;/g' /etc/nginx/conf.d/default.conf
-
-# Start Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Cloud Run injects the $PORT environment variable automatically.
+# This startup command swaps the default port 80 for Cloud Run's $PORT before starting Nginx.
+CMD sed -i -e 's/80/'"$PORT"'/g' /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'
