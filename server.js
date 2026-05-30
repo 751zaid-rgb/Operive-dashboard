@@ -1,8 +1,17 @@
 const express = require('express');
+const cors = require('cors'); // <--- ADD THIS LINE
 const { VertexAI } = require('@google-cloud/vertexai');
 
 const app = express();
 app.use(express.json());
+
+// <--- ADD THIS BLOCK
+app.use(cors({
+  origin: 'https://www.operive.com'
+}));
+
+// Serve all your existing static HTML/CSS files
+app.use(express.static(__dirname));
 
 // Serve all your existing static HTML/CSS files
 app.use(express.static(__dirname)); 
