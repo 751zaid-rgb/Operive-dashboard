@@ -33,20 +33,14 @@ app.post('/api/generate-task', async (req, res) => {
       contents: [{role: 'user', parts: [{text: userPrompt}]}],
     };
 
-    const streamingResp = await generativeModel.generateContentStream(request);
-    let fullText = '';
-    
-    for await (const item of streamingResp.stream) {
-      if (item.text) fullText += item.text();
-    }
-
-    res.json({ success: true, text: fullText });
+    const response = await generativeModel.generateContent(request);
+const fullText = response.response.candidates[0].content.parts[0].text;
+res.json({ success: true, text: fullText });
   } catch (error) {
     console.error("AI Error:", error);
     res.status(500).json({ success: false, error: 'Failed to generate response' });
   }
 });
-
 // Start the server - forcing host 0.0.0.0
 const PORT = process.env.PORT || 8080;
 const HOST = '0.0.0.0';
