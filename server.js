@@ -49,6 +49,6 @@ app.post('/api/generate-task', async (req, res) => {
 
 // Start the server using Cloud Run's default port
 const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`Operive Web App listening on port ${PORT}`);
 });
