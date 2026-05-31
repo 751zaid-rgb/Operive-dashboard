@@ -39,7 +39,8 @@ body {
 body[data-locale="ar"],
 html[lang="ar"] body {
   font-family: "Cairo", "Tajawal", "IBM Plex Sans Arabic", "Noto Sans Arabic", "Segoe UI", Tahoma, sans-serif;
-  line-height: 1.9;
+  font-size: calc(var(--font-body-size) + 2px);
+  line-height: 1.75;
   letter-spacing: 0;
 }
 
@@ -198,8 +199,7 @@ textarea:focus {
 
 body[data-direction="rtl"] .button-row,
 body[data-direction="rtl"] .footer__bottom-left,
-body[data-direction="rtl"] .footer__legal-links,
-body[data-direction="rtl"] .nav__links {
+body[data-direction="rtl"] .footer__legal-links {
   flex-direction: row-reverse;
 }
 
