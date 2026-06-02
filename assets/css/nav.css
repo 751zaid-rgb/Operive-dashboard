@@ -107,7 +107,10 @@
 .phase2-design .locale-switcher-button {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   color: var(--text-primary);
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -119,12 +122,15 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  color: #fff;
 }
 
-.phase2-design .locale-switcher-text {
-  font-size: var(--font-xs);
-  font-weight: 700;
-  white-space: nowrap;
+.phase2-design .locale-switcher-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
 }
 
 .phase2-design .locale-switcher-button:hover,
