@@ -4,7 +4,7 @@ Goal: stay present across YouTube Shorts, TikTok, Facebook, Instagram, X, and Li
 
 Status: approved by CEO and scheduled in Buffer on 2026-07-13.
 
-Verification: 42 scheduled posts confirmed — 7 posts across 6 Buffer channels. No remaining scheduling errors.
+Verification: 42 scheduled posts confirmed — 7 posts across 6 Buffer channels. All posts were updated to regenerated 1080×1920 vertical lead-generation videos suitable for YouTube Shorts and Facebook Reels. No remaining scheduling errors.
 
 ## Channels detected in Buffer
 
