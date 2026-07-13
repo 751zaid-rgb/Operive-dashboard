@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+.cache/
+*.log
+marketing/social-automation/remotion/out/
+marketing/social-automation/remotion/node_modules/
+marketing/social-automation/remotion/.remotion/

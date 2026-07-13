@@ -1,0 +1,23 @@
+{
+  "week": "2026-07-13",
+  "brand": {
+    "name": "Operive",
+    "tagline": "PRACTICAL AI WORKFLOWS",
+    "primary": "#335CFF",
+    "secondary": "#6B3FFF",
+    "bg": "#070A10",
+    "surface": "#101522",
+    "text": "#F0F4FF",
+    "muted": "#9AA6B8"
+  },
+  "headline": "Stop losing leads after hours",
+  "subhead": "AI Front Desk for WhatsApp & Telegram",
+  "steps": [
+    "Customer messages after hours",
+    "Operive answers common questions",
+    "Lead details are captured",
+    "Human handoff when it matters"
+  ],
+  "cta": "Book a walkthrough",
+  "url": "calendly.com/operive/30min"
+}

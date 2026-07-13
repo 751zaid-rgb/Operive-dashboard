@@ -1,0 +1,65 @@
+[
+  {
+    "key": "mon-after-hours",
+    "headline": "Stop losing leads after hours",
+    "subhead": "AI Front Desk for missed messages",
+    "body": "Customers ask questions when your team is busy or offline. Operive keeps the conversation moving.",
+    "steps": ["Instant WhatsApp & Telegram reply", "Answers common questions", "Captures lead details", "Hands off when ready"],
+    "cta": "Book a walkthrough",
+    "url": "calendly.com/operive/30min"
+  },
+  {
+    "key": "tue-workflow",
+    "headline": "From first message to qualified lead",
+    "subhead": "A simple AI Front Desk workflow",
+    "body": "No extra dashboard for customers. They message like normal. Operive turns the chat into usable intake.",
+    "steps": ["Customer asks", "AI collects context", "Request is organized", "Team gets clean handoff"],
+    "cta": "See the workflow",
+    "url": "operive.com/how-it-works"
+  },
+  {
+    "key": "wed-restaurants",
+    "headline": "Restaurants get repeat questions all day",
+    "subhead": "Bookings, hours, menus, catering",
+    "body": "Operive handles the common questions and captures high-intent requests before guests move on.",
+    "steps": ["Answers FAQs", "Captures reservation details", "Routes catering requests", "Escalates urgent leads"],
+    "cta": "Automate restaurant intake",
+    "url": "operive.com/restaurant-ai-front-desk"
+  },
+  {
+    "key": "thu-home-services",
+    "headline": "Fast replies win home service leads",
+    "subhead": "Turn messages into booked jobs",
+    "body": "When customers ask for availability or pricing, waiting too long sends them to the next business.",
+    "steps": ["Replies instantly", "Collects job details", "Captures contact info", "Prepares follow-up"],
+    "cta": "Capture more jobs",
+    "url": "operive.com/home-services-ai-intake"
+  },
+  {
+    "key": "fri-handoff",
+    "headline": "Good automation knows when to stop",
+    "subhead": "AI qualifies. Humans close.",
+    "body": "Operive handles the repetitive front desk work, then brings in a person when the lead is ready.",
+    "steps": ["Answers the routine", "Collects the details", "Flags buying intent", "Hands off to your team"],
+    "cta": "Build the handoff",
+    "url": "calendly.com/operive/30min"
+  },
+  {
+    "key": "sat-founder-pov",
+    "headline": "Small businesses do not need more dashboards",
+    "subhead": "They need handled workflows",
+    "body": "First replies, FAQs, intake, follow-up, and handoff should happen without adding more chaos.",
+    "steps": ["Less manual replying", "Cleaner lead capture", "Faster follow-up", "Workflows teams use"],
+    "cta": "Make operations lighter",
+    "url": "operive.com"
+  },
+  {
+    "key": "sun-recap",
+    "headline": "What AI Front Desk handles in a week",
+    "subhead": "More leads captured. Less repetitive work.",
+    "body": "Use AI where it matters: the repetitive conversations that decide whether a lead is captured or lost.",
+    "steps": ["After-hours replies", "FAQ handling", "Booking requests", "Human handoff"],
+    "cta": "Start with one workflow",
+    "url": "calendly.com/operive/30min"
+  }
+]

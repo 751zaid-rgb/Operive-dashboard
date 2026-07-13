@@ -1,0 +1,21 @@
+{
+  "name": "operive-social-remotion",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "render:week": "remotion render src/Root.tsx OperiveWeekShort out/operive-week-2026-07-13.mp4 --props=./src/posts/week-2026-07-13.json",
+    "render:still": "remotion still src/Root.tsx OperiveWeekShort out/operive-week-2026-07-13.png --props=./src/posts/week-2026-07-13.json --frame=45"
+  },
+  "dependencies": {
+    "@remotion/cli": "latest",
+    "@remotion/media-utils": "latest",
+    "@remotion/renderer": "latest",
+    "remotion": "latest",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "typescript": "latest"
+  }
+}

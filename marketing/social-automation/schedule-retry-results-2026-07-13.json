@@ -1,0 +1,40 @@
+{
+  "created": [
+    {
+      "post": "tue-workflow",
+      "service": "youtube",
+      "channel": "Operive",
+      "id": "6a55682da208f5b1ac0b9a8b",
+      "dueAt": "2026-07-14T15:00:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "post": "tue-workflow",
+      "service": "facebook",
+      "channel": "Operive",
+      "id": "6a55682e0a91bd784c7ba52a",
+      "dueAt": "2026-07-14T15:00:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "post": "sat-founder-pov",
+      "service": "youtube",
+      "channel": "Operive",
+      "id": "6a55682e29834f7ded99b83f",
+      "dueAt": "2026-07-18T16:00:00.000Z",
+      "status": "scheduled"
+    },
+    {
+      "post": "sat-founder-pov",
+      "service": "facebook",
+      "channel": "Operive",
+      "id": "6a55682f0a91bd784c7ba54e",
+      "dueAt": "2026-07-18T16:00:00.000Z",
+      "status": "scheduled"
+    }
+  ],
+  "failures": [],
+  "created_count": 4,
+  "failure_count": 0,
+  "ran_at": "2026-07-13T22:35:27.397815+00:00"
+}
