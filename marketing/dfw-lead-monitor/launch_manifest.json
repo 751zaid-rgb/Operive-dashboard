@@ -1,0 +1,10 @@
+{
+  "articles_per_locale": 30,
+  "localized_pages_created": 93,
+  "assets": [
+    "marketing/dfw-lead-monitor/README.md",
+    "marketing/dfw-lead-monitor/seed_queries.csv",
+    "marketing/dfw-lead-monitor/reverse_prompt_action_plan.csv",
+    "marketing/seo_keyword_pipeline.csv"
+  ]
+}
