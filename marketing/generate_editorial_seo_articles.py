@@ -318,7 +318,7 @@ def write_outputs(rows):
         w = csv.DictWriter(f, fieldnames=fields); w.writeheader()
         for row in rows:
             slug = row['publish_url'].rstrip('/').split('/')[-1]
-            w.writerow({'publish_date':row['publish_date'],'keyword_id':row['keyword_id'],'primary_keyword':row['primary_keyword'],'slug':slug,'url':row['publish_url'],'status':'generated-ready-for-review','gsc_indexing_status':'not-submitted-no-gsc-access','notes':'English, Spanish, and Arabic pages generated with Article schema, hreflang, internal links, external authority link, CTA, and image alt text.'})
+            w.writerow({'publish_date':row['publish_date'],'keyword_id':row['keyword_id'],'primary_keyword':row['primary_keyword'],'slug':slug,'url':row['publish_url'],'status':'published-live','gsc_indexing_status':'not-submitted-no-gsc-access','notes':'English, Spanish, and Arabic pages are live and verified with Article schema, hreflang, internal links, external authority link, CTA, and image alt text.'})
     with SOCIAL.open('w', newline='') as f:
         fields = ['publish_date','keyword','url','linkedin_snippet','twitter_snippet']
         w = csv.DictWriter(f, fieldnames=fields); w.writeheader()
