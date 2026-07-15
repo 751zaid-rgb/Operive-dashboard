@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 from datetime import date
 from pathlib import Path
 
-ROOT = Path('/Users/zaidai/Operive-dashboard')
+ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://www.operive.com'
 CALENDAR = ROOT / 'marketing' / 'editorial_calendar_operive_blog.csv'
 OUT_STATUS = ROOT / 'marketing' / 'seo_article_publish_status.csv'
