@@ -5,3 +5,8 @@ node_modules/
 marketing/social-automation/remotion/out/
 marketing/social-automation/remotion/node_modules/
 marketing/social-automation/remotion/.remotion/
+marketing/dfw-lead-monitor/dashboard.html
+marketing/dfw-lead-monitor/weekly_digest.md
+marketing/dfw-lead-monitor/signals.csv
+marketing/dfw-lead-monitor/lead_monitor.sqlite3
+marketing/dfw-lead-monitor/integrations_status.json
