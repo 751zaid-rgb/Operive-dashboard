@@ -1,0 +1,23 @@
+{
+  "updated_at_utc": "2026-07-16T20:42:08+00:00",
+  "schedule_rows": 120,
+  "schedule_status_counts": {
+    "scheduled-buffer-confirmed-time-adjusted": 2,
+    "blocked-buffer-plan-scheduled-post-limit-10-of-10": 110,
+    "scheduled-buffer-confirmed": 6,
+    "partial-buffer-scheduled-buffer-plan-limit": 2
+  },
+  "schedule_rows_with_ids": 10,
+  "buffer_post_ids_recorded_total": 14,
+  "tracking_social_status_counts": {
+    "partial-buffer-scheduled-plan-limit": 7,
+    "blocked-buffer-plan-scheduled-post-limit-10-of-10": 23
+  },
+  "tracking_gsc_status_counts": {
+    "blocked-google-search-console-scope-or-ui-access-required": 30
+  },
+  "blockers": [
+    "Buffer API returned: Scheduled posts limit reached. You have 10 scheduled posts out of 10 allowed.",
+    "Google Search Console API probe returned insufficient authentication scopes; browser UI unavailable in this worker."
+  ]
+}
