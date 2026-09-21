@@ -20,6 +20,12 @@ Runs every 6 hours to find Dallas-Fort Worth businesses signaling need for Operi
 - `dashboard.html` — local monitoring dashboard with total leads, score >=10 count, segment mix, and review queue.
 - `weekly_digest.md` — weekly digest-ready summary. If SMTP credentials are configured later, this becomes the email body source.
 - `integrations_status.json` — whether Airtable, Notion, and weekly email credentials are available.
+- `generate_outreach_assets.py` — builds approval-safe outreach sequences, CRM import queue, and outreach dashboard from `leads.csv`.
+- `outreach_sequences.md` — persona-specific 3-step email + LinkedIn sequences and personalized first-touch drafts.
+- `outreach_plan.csv` — 20 first-week personalized touches staged for CEO approval.
+- `crm_import_outreach_queue.csv` — HubSpot/Pipedrive import-ready queue.
+- `outreach_dashboard.html` — local outreach dashboard for sends, opens, replies, and meetings booked.
+- `case_study_one_pager.md` — approval-safe one-page proof asset draft.
 
 ## Run manually
 

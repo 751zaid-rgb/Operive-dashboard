@@ -1,5 +1,5 @@
 {
-  "updated_at_utc": "2026-07-16T20:42:08+00:00",
+  "updated_at_utc": "2026-07-16T22:16:42+00:00",
   "schedule_rows": 120,
   "schedule_status_counts": {
     "scheduled-buffer-confirmed-time-adjusted": 2,
@@ -19,5 +19,29 @@
   "blockers": [
     "Buffer API returned: Scheduled posts limit reached. You have 10 scheduled posts out of 10 allowed.",
     "Google Search Console API probe returned insufficient authentication scopes; browser UI unavailable in this worker."
-  ]
+  ],
+  "task_t_10f3e184_articles_25_30": {
+    "article_ids": [
+      "kw_025",
+      "kw_026",
+      "kw_027",
+      "kw_028",
+      "kw_029",
+      "kw_030"
+    ],
+    "live_url_http_200": true,
+    "article_schema_and_canonical_validated": true,
+    "social_copy_assets_prepared": true,
+    "social_scheduling_blocker": "Buffer API/plan scheduled-post limit 10/10; read query also returned HTTP 429 during this run.",
+    "gsc_submission_blocker": "gcloud ADC cannot mint Search Console/webmasters scoped token; URL Inspection Request Indexing still requires Search Console-scoped OAuth or browser UI access.",
+    "tracking_csv_updated": "/Users/zaidai/Operive-dashboard/marketing/seo-content-pipeline/article_distribution_tracking.csv",
+    "dashboard_instruction_applied": "one article a day on social media; all six remain live/polished on operive.com blog and listed on en/es/ar blog indexes",
+    "localized_blog_indexes_verified": true,
+    "kw_025_buffer_publish_day_ids": {
+      "linkedin": "6a5958408095068878583865",
+      "x_twitter": "6a595841cefcf117c7b82a78;6a595842763686fc6b4929aa;6a595843235d0d35a00cf400;6a595843763686fc6b4929ce"
+    },
+    "kw_026_to_kw_030_social_scheduling_blocker": "Buffer mutation returned Scheduled posts limit reached. You have 10 scheduled posts out of 10 allowed.",
+    "one_per_day_buffer_result": "/Users/zaidai/Operive-dashboard/marketing/seo-content-pipeline/article_social_buffer_results_t_10f3e184_one_per_day.json"
+  }
 }
