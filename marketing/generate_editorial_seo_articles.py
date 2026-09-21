@@ -70,10 +70,13 @@ def first_words(text: str, n=28):
 def meta_desc(row, locale):
     kw = row['primary_keyword']
     if locale == 'es':
-        return f'Guía comercial sobre {kw} para equipos de Dallas-Fort Worth que necesitan captar leads, responder rápido y medir el retorno sin crear caos operativo.'
+        return f'Guía sobre {kw} para equipos DFW: automatiza intake, capta leads más rápido, mejora seguimiento y mide ROI con Operive.'
     if locale == 'ar':
-        return f'دليل تجاري حول {kw} لفرق دالاس وفورت وورث التي تحتاج إلى التقاط العملاء المحتملين والرد بسرعة وقياس العائد بدون فوضى تشغيلية.'
-    return f'Commercial guide to {kw} for Dallas-Fort Worth teams that need faster lead capture, cleaner follow-up, and measurable AI workflow ROI.'
+        return f'دليل حول {kw} لفرق DFW: أتمتة الاستقبال، التقاط العملاء بسرعة، تحسين المتابعة، وقياس العائد مع أوبرايف.'
+    desc = f'{kw} guide for DFW teams: automate intake, capture leads faster, improve follow-up, and measure ROI with Operive.'
+    if len(desc) < 150:
+        desc = desc[:-1] + ' for local teams.'
+    return desc
 
 
 def localized_title(row, locale):
@@ -223,7 +226,7 @@ def article_html(row, locale):
         '@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc,
         'author': {'@type': 'Person', 'name': AUTHOR}, 'publisher': {'@type': 'Organization', 'name': 'Operive', 'url': BASE},
         'datePublished': row['publish_date'], 'dateModified': row['publish_date'], 'mainEntityOfPage': canonical,
-        'image': f'{BASE}/og-card.svg', 'inLanguage': 'ar' if locale == 'ar' else locale,
+        'url': canonical, 'image': f'{BASE}/og-card.svg', 'inLanguage': 'ar' if locale == 'ar' else locale,
     }
     breadcrumb_schema = {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Blog','item':f'{BASE}{prefix}/blog/'},{'@type':'ListItem','position':2,'name':title,'item':canonical}]}
     return f'''<!DOCTYPE html>
